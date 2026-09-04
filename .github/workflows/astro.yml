@@ -66,11 +66,16 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
         working-directory: ${{ env.BUILD_PATH }}
+      # Do not pass configure-pages origin/base_path into Astro. This repo is a
+      # project site with a custom apex domain (switchroguelikes.com) served from
+      # `/`. configure-pages still reports the github.io project path
+      # (`/rogue-on-switch`), which 404s CSS/images on the custom domain.
+      # site/base live in astro.config.mjs.
       - name: Build with Astro
-        run: |
-          ${{ steps.detect-package-manager.outputs.runner }} astro build \
-            --site "${{ steps.pages.outputs.origin }}" \
-            --base "${{ steps.pages.outputs.base_path }}"
+        run: ${{ steps.detect-package-manager.outputs.runner }} astro build
+        working-directory: ${{ env.BUILD_PATH }}
+      - name: Check production URLs
+        run: node scripts/check-production-urls.mjs
         working-directory: ${{ env.BUILD_PATH }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5

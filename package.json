@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "check:urls": "node scripts/check-production-urls.mjs",
     "preview": "astro preview",
     "visual-review": "node scripts/capture-visual-review.mjs",
     "astro": "astro"
