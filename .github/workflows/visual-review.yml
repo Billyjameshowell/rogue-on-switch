@@ -22,6 +22,7 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - run: npm run build
+      - run: node scripts/check-production-urls.mjs
       - name: Start production preview
         run: npm run preview -- --host 127.0.0.1 > /tmp/astro-preview.log 2>&1 &
       - name: Wait for preview
