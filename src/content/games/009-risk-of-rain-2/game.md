@@ -21,7 +21,7 @@ last_verified: "2026-07-09"
 
 # Risk of Rain 2
 
-Players crash-land on an alien planet, master distinct survivors, and stack loot combinations while enemies and player power scale throughout the run. Switch supports solo play plus up to four players through local wireless or online play.
+Players crash-land on an alien planet, master distinct survivors, and stack loot combinations while enemies and player power scale throughout the run. Switch supports solo play plus up to four players through local wireless or online play. Switch 2 owners who want first-person runs can try [the co-op shooter Deadzone: Rogue](/games/deadzone-rogue/).
 
 ## Sources
 

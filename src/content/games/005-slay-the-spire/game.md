@@ -19,7 +19,7 @@ last_verified: "2026-07-09"
 
 ## Overview
 
-*Slay the Spire* is a single-player deckbuilding roguelike. Each climb combines card choices, relic synergies, branching routes, and turn-based encounters; a lost run sends the player back to the start with a new build to discover.
+*Slay the Spire* is a single-player deckbuilding roguelike. Each climb combines card choices, relic synergies, branching routes, and turn-based encounters; a lost run sends the player back to the start with a new build to discover. The sequel, [Slay the Spire 2, is not on Switch yet](/games/slay-the-spire-2/), so this is still the only Spire game on the console.
 
 ## Sources
 

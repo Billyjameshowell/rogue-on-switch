@@ -45,9 +45,9 @@ export function researchFacts(game: Game, research?: ResearchGame) {
     ...game,
     title: research.data.name,
     summary: research.data.short_description,
-    price: `$${research.data.price_usd.toFixed(2)}`,
+    price: research.data.price_usd === undefined ? game.price : `$${research.data.price_usd.toFixed(2)}`,
     genre: research.data.genres.join(', '),
-    sourceUrl: research.data.nintendo_switch_url,
+    sourceUrl: research.data.nintendo_switch_url ?? research.data.official_website,
     lastChecked: research.data.last_verified,
   };
 }

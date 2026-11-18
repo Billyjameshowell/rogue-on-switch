@@ -22,7 +22,7 @@ last_verified: "2026-07-09"
 
 # Hades
 
-*Hades* is Supergiant Games' single-player, Greek-mythology action roguelite. Each attempt to escape the Underworld combines fast combat, randomized rewards, and continuing character storylines; permanent progression gives later attempts more options.
+*Hades* is Supergiant Games' single-player, Greek-mythology action roguelite. Each attempt to escape the Underworld combines fast combat, randomized rewards, and continuing character storylines; permanent progression gives later attempts more options. Its sequel, [Hades II on Switch and Switch 2](/games/hades-ii/), launched in September 2025.
 
 The Nintendo Switch edition released on September 17, 2020. The standard U.S. MSRP is $24.99. The included local image is Nintendo's official Hades social/cover artwork.
 

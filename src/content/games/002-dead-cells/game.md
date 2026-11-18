@@ -14,7 +14,7 @@ genres:
 players: "1"
 developer: "Motion Twin"
 publisher: "Motion Twin"
-short_description: "A fast, challenging 'Roguevania' where each run through a shifting island blends responsive combat, branching routes, and unlockable weapons and abilities."
+short_description: "A fast, challenging 'Roguevania' where each run through a shifting island blends responsive combat, branching routes, and weapons and abilities you earn over time."
 image_file: "cover.jpg"
 image_source: "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000007706/bb0e6f620098683ff06d306700a18c945adbcc897aa4cc65f41f97dd69621745"
 last_verified: "2026-07-09"
@@ -22,7 +22,7 @@ last_verified: "2026-07-09"
 
 # Dead Cells
 
-*Dead Cells* is a single-player action roguelite that calls its structure a "Roguevania": runs have permadeath, but paths, mutations, abilities, and weapons can be unlocked for future attempts. The Switch release supports TV, tabletop, and handheld play.
+*Dead Cells* is a single-player action roguelite that calls its structure a "Roguevania": runs have permadeath, but paths, mutations, abilities, and weapons can be earned for future attempts. The Switch release supports TV, tabletop, and handheld play. For a side-scrolling roguelite built for two players, see [the co-op brawler Absolum](/games/absolum/).
 
 Nintendo lists the Switch release date as August 7, 2018. Standard U.S. MSRP is $24.99; sale pricing changes independently. The local image is from Nintendo's official product artwork.
 
