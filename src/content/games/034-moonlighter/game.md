@@ -4,8 +4,6 @@ name: "Moonlighter"
 slug: "moonlighter"
 official_website: "https://moonlighterthegame.com/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/moonlighter-switch/"
-release_date: "November 5, 2018"
-release_date_iso: "2018-11-05"
 price_usd: 24.99
 genres:
   - "Roguelite"

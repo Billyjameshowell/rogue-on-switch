@@ -4,8 +4,6 @@ name: "Blue Prince"
 slug: "blue-prince"
 official_website: "https://www.blueprincegame.com/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/blue-prince-switch-2/"
-release_date: "March 3, 2026 (Switch 2)"
-release_date_iso: "2026-03-03"
 price_usd: 29.99
 genres:
   - "Puzzle"

@@ -4,8 +4,6 @@ name: "Into the Breach"
 slug: "into-the-breach"
 official_website: "https://subsetgames.com/itb.html"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/into-the-breach-switch/"
-release_date: "August 28, 2018"
-release_date_iso: "2018-08-28"
 price_usd: 14.99
 genres: ["roguelike", "turn-based tactics", "strategy"]
 players: "1"

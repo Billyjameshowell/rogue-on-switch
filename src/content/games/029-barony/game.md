@@ -4,8 +4,6 @@ name: "Barony"
 slug: "barony"
 official_website: "https://www.baronygame.com/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/barony-switch/"
-release_date: "August 1, 2023"
-release_date_iso: "2023-08-01"
 price_usd: 19.99
 genres:
   - "Roguelike"

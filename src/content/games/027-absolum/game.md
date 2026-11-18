@@ -4,8 +4,6 @@ name: "Absolum"
 slug: "absolum"
 official_website: "https://www.playabsolum.com/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/absolum-switch/"
-release_date: "October 9, 2025"
-release_date_iso: "2025-10-09"
 price_usd: 24.99
 genres:
   - "Roguelite"

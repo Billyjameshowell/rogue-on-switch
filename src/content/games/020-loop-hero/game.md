@@ -4,8 +4,6 @@ name: "Loop Hero"
 slug: "loop-hero"
 official_website: "https://www.devolverdigital.com/games/loop-hero"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/loop-hero-switch/"
-release_date: "December 9, 2021"
-release_date_iso: "2021-12-09"
 price_usd: 14.99
 genres:
   - "Roguelite"

@@ -4,8 +4,6 @@ name: "PlateUp!"
 slug: "plateup"
 official_website: "https://www.plateupgame.com/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/plateup-switch/"
-release_date: "February 15, 2024"
-release_date_iso: "2024-02-15"
 price_usd: 19.99
 genres:
   - "Roguelite"

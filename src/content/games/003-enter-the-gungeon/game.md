@@ -4,8 +4,6 @@ name: "Enter the Gungeon"
 slug: "enter-the-gungeon"
 official_website: "https://enterthegungeon.com/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/enter-the-gungeon-switch/"
-release_date: "December 14, 2017"
-release_date_iso: "2017-12-14"
 price_usd: 14.99
 genres:
   - "Roguelite"

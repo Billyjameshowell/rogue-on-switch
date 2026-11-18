@@ -4,8 +4,6 @@ name: "Deadzone: Rogue"
 slug: "deadzone-rogue"
 official_website: "https://www.deadzonerogue.com/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/deadzone-rogue-switch-2/"
-release_date: "March 17, 2026 (Switch 2)"
-release_date_iso: "2026-03-17"
 price_usd: 24.99
 genres:
   - "Roguelite"

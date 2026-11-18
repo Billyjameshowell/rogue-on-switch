@@ -4,8 +4,6 @@ name: "Cult of the Lamb"
 slug: "cult-of-the-lamb"
 official_website: "https://www.cultofthelamb.com/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/cult-of-the-lamb-switch/"
-release_date: "August 11, 2022"
-release_date_iso: "2022-08-11"
 price_usd: 24.99
 genres:
   - "action adventure"

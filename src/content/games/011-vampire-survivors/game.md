@@ -4,8 +4,6 @@ name: "Vampire Survivors"
 slug: "vampire-survivors"
 official_website: "https://poncle.games/vampire-survivors"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/vampire-survivors-switch/"
-release_date: "August 17, 2023"
-release_date_iso: "2023-08-17"
 price_usd: 4.99
 genres:
   - "survival"

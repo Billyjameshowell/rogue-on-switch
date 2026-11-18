@@ -4,8 +4,6 @@ name: "Going Under"
 slug: "going-under"
 official_website: "https://aggrocrab.com/games/going-under"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/going-under-switch/"
-release_date: "September 24, 2020"
-release_date_iso: "2020-09-24"
 price_usd: 19.99
 genres:
   - "Roguelite"

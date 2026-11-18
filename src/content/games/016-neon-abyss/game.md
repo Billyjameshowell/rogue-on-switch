@@ -4,8 +4,6 @@ name: "Neon Abyss"
 slug: "neon-abyss"
 official_website: "https://www.team17.com/games/neon-abyss/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/neon-abyss-switch/"
-release_date: "July 14, 2020"
-release_date_iso: "2020-07-14"
 price_usd: 19.99
 genres:
   - "Roguelike"

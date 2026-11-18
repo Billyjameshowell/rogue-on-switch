@@ -4,8 +4,6 @@ name: "BALL x PIT"
 slug: "ball-x-pit"
 official_website: "https://www.ballxpit.com/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/ball-x-pit-switch/"
-release_date: "October 15, 2025"
-release_date_iso: "2025-10-15"
 price_usd: 14.99
 genres:
   - "Roguelite"

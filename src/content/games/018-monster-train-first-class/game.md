@@ -4,8 +4,6 @@ name: "Monster Train First Class"
 slug: "monster-train-first-class"
 official_website: "https://www.themonstertrain.com/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/monster-train-first-class-switch/"
-release_date: "August 19, 2021"
-release_date_iso: "2021-08-19"
 price_usd: 29.99
 genres:
   - "Roguelite"

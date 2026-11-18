@@ -4,8 +4,6 @@ name: "Risk of Rain 2"
 slug: "risk-of-rain-2"
 official_website: "https://www.riskofrain.com/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/risk-of-rain-2-switch/"
-release_date: "August 30, 2019"
-release_date_iso: "2019-08-30"
 price_usd: 24.99
 genres:
   - "third-person shooter"
