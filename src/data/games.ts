@@ -8,8 +8,8 @@ export type Game = {
   slug: string; title: string; playstyle: Playstyle; genre: string; classification: 'Roguelike' | 'Roguelite' | 'Hybrid';
   summary: string; bestFor: string; skipIf: string; runLength: string; price: string; coOp: string; difficulty: string;
   progression: string; switchNotes: string; sourceUrl: string; lastChecked: string;
-  /** Nintendo US eShop release date (ISO). Omitted only for a game with no Switch release. */
-  releaseDate?: string;
+  /** Nintendo US eShop release date (ISO). */
+  releaseDate: string;
   /** Native Nintendo versions. 'switch-2' means a Switch 2 game or a Switch 2 Edition, not backward compatibility. */
   consoles: Console[];
 };
@@ -48,7 +48,6 @@ const seed: (Omit<Game, 'slug' | Editorial> & Partial<Pick<Game, Editorial>>)[] 
   { title: 'Darkest Dungeon', releaseDate: '2018-01-18', consoles: ['switch'], playstyle: 'Tactics', genre: 'Turn-based RPG', classification: 'Roguelite', runLength: '30–60 min', price: '$24.99', coOp: 'No', difficulty: 'Hard' },
   { title: 'Griftlands', releaseDate: '2021-06-04', consoles: ['switch'], playstyle: 'Cards', genre: 'Deckbuilding', classification: 'Roguelite', runLength: '45–90 min', price: '$19.99', coOp: 'No', difficulty: 'Medium' },
   { title: 'One Step From Eden', releaseDate: '2020-03-26', consoles: ['switch'], playstyle: 'Action', genre: 'Deckbuilding action', classification: 'Roguelite', runLength: '20–40 min', price: '$19.99', coOp: 'Local', difficulty: 'Hard' },
-  { title: 'Breachway', consoles: [], playstyle: 'Cards', genre: 'Deckbuilding strategy', classification: 'Roguelite', runLength: '30–60 min', price: '$19.99', coOp: 'No', difficulty: 'Medium' },
   { title: 'Fights in Tight Spaces', releaseDate: '2023-05-25', consoles: ['switch'], playstyle: 'Tactics', genre: 'Deckbuilding tactics', classification: 'Roguelike', runLength: '25–45 min', price: '$24.99', coOp: 'No', difficulty: 'Medium' },
   { title: 'Tangledeep', releaseDate: '2019-01-31', consoles: ['switch'], playstyle: 'Tactics', genre: 'Dungeon crawler', classification: 'Roguelike', runLength: '30–60 min', price: '$19.99', coOp: 'No', difficulty: 'Medium' },
   { title: 'Flame in the Flood', releaseDate: '2017-10-12', consoles: ['switch'], playstyle: 'Tactics', genre: 'Survival', classification: 'Roguelite', runLength: '20–45 min', price: '$14.99', coOp: 'No', difficulty: 'Medium' },
@@ -148,7 +147,7 @@ const seed: (Omit<Game, 'slug' | Editorial> & Partial<Pick<Game, Editorial>>)[] 
 export const consoleNames: Record<Console, string> = { switch: 'Nintendo Switch', 'switch-2': 'Nintendo Switch 2' };
 
 const releaseFormat = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
-export const formatReleaseDate = (iso?: string) => (iso ? releaseFormat.format(new Date(`${iso}T00:00:00Z`)) : 'Not on Switch');
+export const formatReleaseDate = (iso: string) => releaseFormat.format(new Date(`${iso}T00:00:00Z`));
 
 export const games: Game[] = seed.map((game) => ({
   slug: game.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-$/, ''),

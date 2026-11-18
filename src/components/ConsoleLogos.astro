@@ -2,8 +2,7 @@
 import { consoleNames, type Console } from '../data/games';
 const { consoles } = Astro.props as { consoles: Console[] };
 ---
-{consoles.length ? (
-  <span class="console-logos">
+<span class="console-logos">
     {consoles.map((console) => (
       <span class="console-logo" role="img" aria-label={consoleNames[console]} title={consoleNames[console]}>
         <svg viewBox="0 0 22 16" width="22" height="16" aria-hidden="true" focusable="false">
@@ -15,5 +14,4 @@ const { consoles } = Astro.props as { consoles: Console[] };
         {console === 'switch-2' && <b aria-hidden="true">2</b>}
       </span>
     ))}
-  </span>
-) : <span>Not on Switch</span>}
+</span>
