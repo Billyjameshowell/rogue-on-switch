@@ -1,0 +1,17 @@
+---
+import { consoleNames, type Console } from '../data/games';
+const { consoles } = Astro.props as { consoles: Console[] };
+---
+<span class="console-logos">
+    {consoles.map((console) => (
+      <span class="console-logo" role="img" aria-label={consoleNames[console]} title={consoleNames[console]}>
+        <svg viewBox="0 0 22 16" width="22" height="16" aria-hidden="true" focusable="false">
+          <rect x="1" y="1" width="8" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.6" />
+          <circle cx="5" cy="5" r="1.6" fill="currentColor" />
+          <path d="M13 1h4a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4h-4z" fill="currentColor" />
+          <circle cx="17" cy="10.5" r="1.6" fill="var(--ink)" />
+        </svg>
+        {console === 'switch-2' && <b aria-hidden="true">2</b>}
+      </span>
+    ))}
+</span>

@@ -4,8 +4,6 @@ name: "Dead Cells"
 slug: "dead-cells"
 official_website: "https://dead-cells.com/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/dead-cells-switch/"
-release_date: "August 7, 2018"
-release_date_iso: "2018-08-07"
 price_usd: 24.99
 genres:
   - "Roguelite"

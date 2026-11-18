@@ -4,8 +4,6 @@ name: "UFO 50"
 slug: "ufo-50"
 official_website: "https://50games.fun/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/ufo-50-switch/"
-release_date: "August 7, 2025"
-release_date_iso: "2025-08-07"
 price_usd: 24.99
 genres:
   - "Game collection"

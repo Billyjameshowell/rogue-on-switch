@@ -4,8 +4,6 @@ name: "Roguebook"
 slug: "roguebook"
 official_website: "https://www.nacongaming.com/en-US/roguebook"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/roguebook-switch/"
-release_date: "April 21, 2022"
-release_date_iso: "2022-04-21"
 price_usd: 19.99
 genres:
   - "Roguelite"

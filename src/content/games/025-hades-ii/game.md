@@ -4,8 +4,6 @@ name: "Hades II"
 slug: "hades-ii"
 official_website: "https://www.supergiantgames.com/games/hades-ii/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/hades-ii-switch/"
-release_date: "September 25, 2025"
-release_date_iso: "2025-09-25"
 price_usd: 29.99
 genres:
   - "Roguelite"

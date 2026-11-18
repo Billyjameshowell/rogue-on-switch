@@ -4,8 +4,6 @@ name: "Darkest Dungeon"
 slug: "darkest-dungeon"
 official_website: "https://www.darkestdungeon.com/darkest-dungeon/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/darkest-dungeon-switch/"
-release_date: "January 18, 2018"
-release_date_iso: "2018-01-18"
 price_usd: 24.99
 genres:
   - "Roguelike"

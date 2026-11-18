@@ -4,8 +4,6 @@ name: "The Binding of Isaac: Afterbirth+"
 slug: "the-binding-of-isaac-afterbirth-plus"
 official_website: "https://bindingofisaac.com/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/the-binding-of-isaac-afterbirth-plus-switch/"
-release_date: "March 17, 2017"
-release_date_iso: "2017-03-17"
 price_usd: 39.99
 genres:
   - "Roguelike"

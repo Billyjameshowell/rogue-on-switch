@@ -4,8 +4,6 @@ name: "Skul: The Hero Slayer"
 slug: "skul-the-hero-slayer"
 official_website: "https://skulthegame.com/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/skul-the-hero-slayer-switch/"
-release_date: "October 21, 2021"
-release_date_iso: "2021-10-21"
 price_usd: 19.99
 genres:
   - "Roguelite"

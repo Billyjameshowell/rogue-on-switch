@@ -4,8 +4,6 @@ name: "For The King"
 slug: "for-the-king"
 official_website: "https://ironoakgames.com/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/for-the-king-switch/"
-release_date: "May 9, 2019"
-release_date_iso: "2019-05-09"
 price_usd: 24.99
 genres:
   - "Roguelite"

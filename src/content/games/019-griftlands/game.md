@@ -4,8 +4,6 @@ name: "Griftlands"
 slug: "griftlands"
 official_website: "https://www.klei.com/games/griftlands"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/griftlands-switch/"
-release_date: "June 4, 2021"
-release_date_iso: "2021-06-04"
 price_usd: 19.99
 genres:
   - "Roguelite"

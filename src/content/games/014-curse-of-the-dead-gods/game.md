@@ -4,8 +4,6 @@ name: "Curse of the Dead Gods"
 slug: "curse-of-the-dead-gods"
 official_website: "https://www.focus-entmt.com/en/games/curse-of-the-dead-gods"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/curse-of-the-dead-gods-switch/"
-release_date: "February 23, 2021"
-release_date_iso: "2021-02-23"
 price_usd: 19.99
 genres:
   - "Roguelike"

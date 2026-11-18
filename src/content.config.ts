@@ -10,8 +10,6 @@ const games = defineCollection({
     slug: z.string().regex(/^[a-z0-9-]+$/),
     official_website: z.url(),
     nintendo_switch_url: z.url(),
-    release_date: z.string(),
-    release_date_iso: z.string().date(),
     price_usd: z.number().nonnegative(),
     genres: z.array(z.string()).min(1),
     players: z.string(),

@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import ConsoleLogos from './ConsoleLogos.astro';
+import PixelBadge from './PixelBadge.astro';
+import { formatReleaseDate, games, playstyleColor } from '../data/games';
+import { getGameAssetsBySiteSlug, researchFacts } from '../data/research';
+const { showRelease = false } = Astro.props as { showRelease?: boolean };
+const gameAssets = await getGameAssetsBySiteSlug();
+---
+<div class="table-scroll" role="region" aria-label="Games table. Scroll sideways for more columns." tabindex="0">
+  <table class="game-table">
+    <thead><tr><th>Game</th><th>Console</th>{showRelease && <th>Released</th>}<th>Run length</th><th>Price (USD)</th><th>Genre</th><th>Playstyle</th><th>Co-op</th></tr></thead>
+    <tbody>{games.map((seed) => {
+      const asset = gameAssets.get(seed.slug);
+      const game = researchFacts(seed, asset?.entry) ?? seed;
+      return <tr>
+        <td><a class="game-cell" href={`/games/${game.slug}/`}>{asset?.cover && <Image class="game-thumbnail" src={asset.cover} width={104} height={60} alt="" />}<span>{game.title}</span></a></td>
+        <td><ConsoleLogos consoles={game.consoles} /></td>
+        {showRelease && <td><time datetime={game.releaseDate}>{formatReleaseDate(game.releaseDate)}</time></td>}
+        <td>{game.runLength}</td><td>{game.price}</td><td>{game.genre}, {game.classification}</td>
+        <td><PixelBadge label={game.playstyle} color={playstyleColor[game.playstyle]} /></td><td>{game.coOp}</td>
+      </tr>;
+    })}</tbody>
+  </table>
+</div>
+<p class="table-note">Every Switch game here also plays on Switch 2. A Switch 2 logo marks a Switch 2 game or a Switch 2 Edition.</p>

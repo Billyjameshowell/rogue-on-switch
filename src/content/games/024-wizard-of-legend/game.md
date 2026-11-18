@@ -4,8 +4,6 @@ name: "Wizard of Legend"
 slug: "wizard-of-legend"
 official_website: "https://wizardoflegend.com/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/wizard-of-legend-switch/"
-release_date: "May 15, 2018"
-release_date_iso: "2018-05-15"
 price_usd: 15.99
 genres:
   - "Roguelite"
