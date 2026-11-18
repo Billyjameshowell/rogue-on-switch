@@ -36,7 +36,7 @@ We think so. Like [Balatro, the poker roguelike on Switch](/games/balatro/), eve
 
 ## Which other UFO 50 games are roguelikes?
 
-*Velgress* (game 7) is a vertical platformer where you climb out of a randomly generated pit while a spiked roller chases you from below, and a game over sends you back to the start. *Campanella 2* (game 35) is an action adventure through a space station where you pick your route through the regions and keep nothing between runs. Both reset fully when a run ends.
+*Velgress* (game 7) is a vertical platformer where you climb out of a randomly generated pit while a spiked roller chases you from below, and a game over sends you back to the start. *Campanella 2* (game 35) is an action adventure through a space station where you pick your route through the regions and keep nothing between runs. Both reset fully when a run ends, and we have spent far less time with them than with *Party House*.
 
 ## Is UFO 50 worth buying for the roguelikes alone?
 
