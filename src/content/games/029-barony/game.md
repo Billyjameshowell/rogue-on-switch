@@ -28,7 +28,7 @@ Turning Wheel first released it on PC in 2015 and has kept updating it for a dec
 
 ## What is Barony like in co-op?
 
-It is brutal and hilarious. On our first co-op run, our partner found an amulet and handed it to us. We put it on, it turned out to be a cursed Amulet of Strangulation, and it choked our character to death on the spot. Later we opened a door and a giant pumpkin rolled out and flattened us. Moments like these are why Barony is so much fun with friends, and why it is not a relaxing game.
+It is brutal and hilarious. On our first co-op run, our partner found an amulet and handed it to us. We put it on, it turned out to be a cursed Amulet of Strangulation, and it choked our character to death on the spot. Later we opened a door and a giant pumpkin rolled out and flattened us. The pumpkin came from Barony's seasonal October skin, a Halloween theme that dresses up the dungeon without changing any of the rules. Moments like these are why Barony is so much fun with friends, and why it is not a relaxing game.
 
 ## Is Barony hard to learn?
 
@@ -47,6 +47,7 @@ A full clear of all 35 floors takes an experienced player about three to five ho
 - [Nintendo Store: Barony](https://www.nintendo.com/us/store/products/barony-switch/) for the release date, price, players, and features.
 - [Barony: Switch release date announcement](https://www.baronygame.com/blog/barony-nintendo-switch-release-date) for the launch.
 - [Barony turns 10](https://www.baronygame.com/blog/barony-turns-10) for the 2015 PC debut and updates since.
+- [Barony: 4.1.0 update summary](https://www.baronygame.com/blog/410-update-summary) for the October Halloween theme.
 - [Barony Wiki: Amulets](https://barony.wiki.gg/wiki/Amulets) for how the Amulet of Strangulation works.
 - [Blueprinted Gaming: Barony beginner guide](https://blueprintedgaming.com/docs/barony/getting-started) for floor count and run length.
 

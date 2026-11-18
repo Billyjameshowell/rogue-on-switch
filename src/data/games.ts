@@ -42,7 +42,6 @@ const seed: (Omit<Game, 'slug' | Editorial> & Partial<Pick<Game, Editorial>>)[] 
   { title: 'Darkest Dungeon', playstyle: 'Tactics', genre: 'Turn-based RPG', classification: 'Roguelite', runLength: '30–60 min', price: '$24.99', coOp: 'No', difficulty: 'Hard' },
   { title: 'Griftlands', playstyle: 'Cards', genre: 'Deckbuilding', classification: 'Roguelite', runLength: '45–90 min', price: '$19.99', coOp: 'No', difficulty: 'Medium' },
   { title: 'One Step From Eden', playstyle: 'Action', genre: 'Deckbuilding action', classification: 'Roguelite', runLength: '20–40 min', price: '$19.99', coOp: 'Local', difficulty: 'Hard' },
-  { title: 'Breachway', playstyle: 'Cards', genre: 'Deckbuilding strategy', classification: 'Roguelite', runLength: '30–60 min', price: '$19.99', coOp: 'No', difficulty: 'Medium' },
   { title: 'Fights in Tight Spaces', playstyle: 'Tactics', genre: 'Deckbuilding tactics', classification: 'Roguelike', runLength: '25–45 min', price: '$24.99', coOp: 'No', difficulty: 'Medium' },
   { title: 'Tangledeep', playstyle: 'Tactics', genre: 'Dungeon crawler', classification: 'Roguelike', runLength: '30–60 min', price: '$19.99', coOp: 'No', difficulty: 'Medium' },
   { title: 'Flame in the Flood', playstyle: 'Tactics', genre: 'Survival', classification: 'Roguelite', runLength: '20–45 min', price: '$14.99', coOp: 'No', difficulty: 'Medium' },
