@@ -3,7 +3,7 @@ import type { ImageMetadata } from 'astro';
 import { games, type Game } from './games';
 
 export type ResearchGame = CollectionEntry<'games'>;
-export type ResearchGameAsset = { entry: ResearchGame; cover?: string };
+export type ResearchGameAsset = { entry: ResearchGame; cover?: ImageMetadata };
 
 const coverModules = import.meta.glob('../content/games/**/cover.{jpg,jpeg,png,webp}', {
   eager: true,
@@ -33,7 +33,7 @@ export async function getResearchAssetsBySiteSlug() {
       siteSlug,
       {
         entry,
-        cover: Object.entries(coverModules).find(([path]) => path.includes(`/${entry.data.id}-`))?.[1].src,
+        cover: Object.entries(coverModules).find(([path]) => path.includes(`/${entry.data.id}-`))?.[1],
       },
     ]),
   );

@@ -1,5 +1,6 @@
 ---
 import { render } from 'astro:content';
+import { Image, getImage } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import { games } from '../../data/games';
@@ -11,17 +12,18 @@ const researchAsset = (await getResearchAssetsBySiteSlug()).get(seed.slug);
 const research = researchAsset?.entry;
 const game = researchFacts(seed, research) ?? seed;
 const cover = researchAsset?.cover;
+const socialImage = cover ? (await getImage({ src: cover, width: 1200, format: 'jpg' })).src : undefined;
 const { Content } = research ? await render(research) : { Content: undefined };
 const related = games.filter((item) => item.playstyle === game.playstyle && item.slug !== game.slug).slice(0,3);
 const jsonLd = { '@context':'https://schema.org', '@type':'VideoGame', name:game.title, genre:game.genre, gamePlatform:game.platform, description:game.summary };
 ---
-<BaseLayout title={`${game.title} on Nintendo Switch | Rogue On Switch`} description={game.summary} image={cover}>
+<BaseLayout title={`${game.title} on Nintendo Switch | Rogue On Switch`} description={game.summary} image={socialImage}>
   <SiteHeader />
   <main class="shell"><p class="breadcrumb"><a href="/">Home</a> / <a href="/games/">Games</a> / {game.title}</p>
     <article class="detail">
       <div class:list={['game-detail-hero', { 'has-cover': Boolean(cover) }]}>
         <div><p class="kicker">{game.classification} · {game.playstyle}</p><h1>{game.title}</h1><p>{game.summary}</p></div>
-        {cover && <img src={cover} alt={`${game.title} cover art`} />}
+        {cover && <Image src={cover} widths={[480, 960]} sizes="(max-width: 760px) 100vw, 40vw" alt={`${game.title} cover art`} loading="eager" fetchpriority="high" />}
       </div>
       <div class="facts"><div><b>Typical run</b>{game.runLength}</div><div><b>Regular US price</b>{game.price}</div><div><b>Co-op</b>{game.coOp}</div>{research && <><div><b>Nintendo release</b>{research.data.release_date}</div><div><b>Players</b>{research.data.players}</div><div><b>Developer</b>{research.data.developer}</div></>}</div>
       {research && <section class="research-overview"><h2>Overview</h2><Content /></section>}
