@@ -30,10 +30,6 @@ The game crosses a brick-breaker with the level-up loop of [Vampire Survivors on
 
 Resources from each run go into New Ballbylon, a town above the pit with more than 70 buildings to construct. Buildings add heroes and permanent bonuses, and heroes who stay home gather resources while you play.
 
-## Is BALL x PIT a good Megabonk alternative on Switch?
-
-Yes. [Megabonk has no Switch version](/games/megabonk/), and *BALL x PIT* is the closest official game on the console, with the same snowballing builds in shorter runs. It is single player only.
-
 ## Sources
 
 - [Nintendo Store: BALL x PIT](https://www.nintendo.com/us/store/products/ball-x-pit-switch/) for the release date, price, and features.

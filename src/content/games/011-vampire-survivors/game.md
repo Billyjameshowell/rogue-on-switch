@@ -22,7 +22,7 @@ last_verified: "2026-07-09"
 
 # Vampire Survivors
 
-Survive growing supernatural hordes until dawn by collecting weapons and upgrades that can rapidly snowball a build. The Switch edition supports both couch and online co-op for up to four players. For the same loop with a brick-breaker twist, try [BALL x PIT, a $14.99 Switch roguelite](/games/ball-x-pit/). The 3D hit [Megabonk has no Switch port](/games/megabonk/) and is PC only.
+Survive growing supernatural hordes until dawn by collecting weapons and upgrades that can rapidly snowball a build. The Switch edition supports both couch and online co-op for up to four players. For the same loop with a brick-breaker twist, try [BALL x PIT, a $14.99 Switch roguelite](/games/ball-x-pit/).
 
 ## Sources
 
