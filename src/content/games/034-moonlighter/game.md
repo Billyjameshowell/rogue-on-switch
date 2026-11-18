@@ -16,7 +16,7 @@ developer: "Digital Sun"
 publisher: "11 bit studios"
 short_description: "Moonlighter is an action RPG roguelite on Switch for $24.99 where a shopkeeper named Will explores dungeons and sells the loot in his shop."
 image_file: "cover.webp"
-image_source: "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_png/store/software/switch/70010000011032/d29d40ae3e93c166c40cbd7806c298f488864c672b71405a7f3f57f50ec53433"
+image_source: "https://assets.nintendo.com/image/upload/c_fill,w_1200,h_675/q_auto:best/f_png/store/software/switch/70010000011032/d29d40ae3e93c166c40cbd7806c298f488864c672b71405a7f3f57f50ec53433"
 last_verified: "2026-11-18"
 ---
 

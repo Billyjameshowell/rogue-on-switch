@@ -22,7 +22,7 @@ last_verified: "2026-07-10"
 
 # Spelunky 2
 
-*Spelunky 2* expands the original's systems-driven roguelike platforming with denser levels, branching paths, and countless perilous interactions between items, enemies, and traps. It supports solo play, local co-op for up to four players, and online multiplayer. The Switch edition arrived on August 26, 2021; the standard U.S. price is $19.99.
+*Spelunky 2* expands the original's systems-driven roguelike platforming with denser levels, branching paths, and countless perilous interactions between items, enemies, and traps. It supports solo play, local co-op for up to four players, and online multiplayer. The Switch edition arrived on August 26, 2021; the standard U.S. price is $19.99. Mossmouth followed it with [UFO 50, a collection of 50 games](/games/ufo-50/) that includes several roguelikes.
 
 The local image is official Nintendo Store key art, downloaded from Nintendo's public product asset.
 

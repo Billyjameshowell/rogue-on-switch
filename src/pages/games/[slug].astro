@@ -4,14 +4,14 @@ import { Image, getImage } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import { games } from '../../data/games';
-import { getResearchAssetsBySiteSlug, researchFacts } from '../../data/research';
+import { getGameAssetsBySiteSlug, researchFacts } from '../../data/research';
 
 export function getStaticPaths() { return games.map((game) => ({ params: { slug: game.slug }, props: { game } })); }
 const { game: seed } = Astro.props;
-const researchAsset = (await getResearchAssetsBySiteSlug()).get(seed.slug);
-const research = researchAsset?.entry;
+const gameAsset = (await getGameAssetsBySiteSlug()).get(seed.slug);
+const research = gameAsset?.entry;
 const game = researchFacts(seed, research) ?? seed;
-const cover = researchAsset?.cover;
+const cover = gameAsset?.cover;
 const socialImage = cover ? (await getImage({ src: cover, width: 1200, format: 'jpg' })).src : undefined;
 const { Content } = research ? await render(research) : { Content: undefined };
 const related = games.filter((item) => item.playstyle === game.playstyle && item.slug !== game.slug).slice(0,3);
