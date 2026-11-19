@@ -1,0 +1,7 @@
+{
+  "_note": "Internal play ratings from Billy's play notes (2026-11-18). Never render these on the site. Nothing under src/ imports this file.",
+  "plateup": { "rating": 4, "outOf": 5 },
+  "barony": { "rating": 3, "outOf": 5 },
+  "ball-x-pit": { "rating": 4, "outOf": 5 },
+  "ufo-50": { "rating": 5, "outOf": 5, "note": "For Party House alone; the other 49 games are a bonus." }
+}

@@ -3,9 +3,16 @@ import type { ImageMetadata } from 'astro';
 import { games, type Game } from './games';
 
 export type ResearchGame = CollectionEntry<'games'>;
-export type ResearchGameAsset = { entry: ResearchGame; cover?: ImageMetadata };
+// Every directory game can have a cover. Research packages keep theirs in the package folder;
+// games without a package use src/assets/covers/{site-slug}.webp. All are Nintendo US eShop art.
+export type GameAsset = { entry?: ResearchGame; cover?: ImageMetadata };
 
-const coverModules = import.meta.glob('../content/games/**/cover.{jpg,jpeg,png,webp}', {
+const packageCovers = import.meta.glob('../content/games/**/cover.{jpg,jpeg,png,webp}', {
+  eager: true,
+  import: 'default',
+}) as Record<string, ImageMetadata>;
+
+const directoryCovers = import.meta.glob('../assets/covers/*.webp', {
   eager: true,
   import: 'default',
 }) as Record<string, ImageMetadata>;
@@ -25,17 +32,17 @@ export async function getResearchBySiteSlug() {
   }));
 }
 
-export async function getResearchAssetsBySiteSlug() {
+export async function getGameAssetsBySiteSlug() {
   const researchBySiteSlug = await getResearchBySiteSlug();
 
-  return new Map<string, ResearchGameAsset>(
-    [...researchBySiteSlug].map(([siteSlug, entry]) => [
-      siteSlug,
-      {
-        entry,
-        cover: Object.entries(coverModules).find(([path]) => path.includes(`/${entry.data.id}-`))?.[1],
-      },
-    ]),
+  return new Map<string, GameAsset>(
+    games.map((game) => {
+      const entry = researchBySiteSlug.get(game.slug);
+      const cover = entry
+        ? Object.entries(packageCovers).find(([path]) => path.includes(`/${entry.data.id}-`))?.[1]
+        : directoryCovers[`../assets/covers/${game.slug}.webp`];
+      return [game.slug, { entry, cover }];
+    }),
   );
 }
 

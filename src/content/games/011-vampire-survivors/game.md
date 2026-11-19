@@ -14,7 +14,7 @@ genres:
 players: "1–4 players on one system or online"
 developer: "poncle"
 publisher: "poncle"
-short_description: "A minimalist time-survival roguelite where escalating monster swarms meet automatically firing weapons, run-based upgrades, and persistent unlocks."
+short_description: "A minimalist time-survival roguelite where escalating monster swarms meet automatically firing weapons, run-based upgrades, and permanent upgrades."
 image_file: "cover.jpg"
 image_source: "https://www.nintendo.com/us/store/products/vampire-survivors-switch/"
 last_verified: "2026-07-09"
@@ -22,7 +22,7 @@ last_verified: "2026-07-09"
 
 # Vampire Survivors
 
-Survive growing supernatural hordes until dawn by collecting weapons and upgrades that can rapidly snowball a build. The Switch edition supports both couch and online co-op for up to four players.
+Survive growing supernatural hordes until dawn by collecting weapons and upgrades that can rapidly snowball a build. The Switch edition supports both couch and online co-op for up to four players. For the same loop with a brick-breaker twist, try [BALL x PIT, a $14.99 Switch roguelite](/games/ball-x-pit/).
 
 ## Sources
 
