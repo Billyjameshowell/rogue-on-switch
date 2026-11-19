@@ -4,8 +4,8 @@ name: "Balatro"
 slug: "balatro"
 official_website: "https://www.playbalatro.com/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/balatro-switch/"
-release_date: "September 26, 2024"
-release_date_iso: "2024-09-26"
+release_date: "February 20, 2024"
+release_date_iso: "2024-02-20"
 price_usd: 14.99
 genres: ["roguelike", "deckbuilder", "poker-inspired", "strategy"]
 players: "1"
@@ -19,7 +19,7 @@ last_verified: "2026-07-09"
 
 ## Overview
 
-*Balatro* turns poker hands into a score-chasing roguelike. Players modify a deck, collect rule-bending Jokers, and create huge synergy chains to beat escalating blind requirements.
+*Balatro* turns poker hands into a score-chasing roguelike. Players modify a deck, collect rule-bending Jokers, and create huge synergy chains to beat escalating blind requirements. For a different card roguelike, [Party House inside UFO 50](/games/ufo-50/) builds a deck out of party guests.
 
 ## Sources
 
