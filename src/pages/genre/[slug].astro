@@ -1,5 +1,11 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro'; import SiteHeader from '../../components/SiteHeader.astro'; import { games, type Playstyle } from '../../data/games';
-const names:Record<string,Playstyle>={action:'Action',cards:'Cards',tactics:'Tactics',shooter:'Shooter','co-op':'Co-op'}; export function getStaticPaths(){return ['action','cards','tactics','shooter','co-op'].map(slug=>({params:{slug}}));} const style=names[Astro.params.slug!]; const picks=games.filter(g=>g.playstyle===style);
+import HubPage from '../../components/HubPage.astro';
+import { getDirectory } from '../../data/directory';
+import { playstyles } from '../../data/hubs';
+
+export function getStaticPaths() { return playstyles.map((style) => ({ params: { slug: style.slug }, props: { style } })); }
+const { style } = Astro.props;
+const picks = (await getDirectory()).filter((game) => game.playstyle === style.name);
+const description = `${style.blurb} The directory has ${picks.length} ${style.name.toLowerCase()} roguelikes and roguelites on Switch, each with its run length and price.`;
 ---
-<BaseLayout title={`Best ${style} roguelikes on Nintendo Switch | Rogue On Switch`}><SiteHeader /><main class="shell"><p class="breadcrumb"><a href="/">Home</a> / Genres / {style}</p><article class="detail"><p class="kicker">Genre hub</p><h1>{style} runs on Switch</h1><p>Practical recommendations for players who know the feeling they want, even when they do not yet know the game.</p><div class="related">{picks.map(game=><a href={`/games/${game.slug}/`}><h2>{game.title}</h2><p>{game.summary}</p></a>)}</div></article></main></BaseLayout>
+<HubPage section={['Genres']} title={`${style.name} runs on Switch`} metaTitle={`Best ${style.name} roguelikes on Nintendo Switch | Rogue On Switch`} description={description} picks={picks} />

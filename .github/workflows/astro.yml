@@ -71,6 +71,9 @@ jobs:
       # `/`. configure-pages still reports the github.io project path
       # (`/rogue-on-switch`), which 404s CSS/images on the custom domain.
       # site/base live in astro.config.mjs.
+      - name: Type check
+        run: npm run check
+        working-directory: ${{ env.BUILD_PATH }}
       - name: Build with Astro
         run: ${{ steps.detect-package-manager.outputs.runner }} astro build
         working-directory: ${{ env.BUILD_PATH }}

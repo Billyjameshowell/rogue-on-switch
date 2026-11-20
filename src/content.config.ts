@@ -18,7 +18,7 @@ const games = defineCollection({
     short_description: z.string().min(20),
     image_file: z.string().regex(/^cover\.(png|jpe?g|webp)$/),
     image_source: z.url(),
-    last_verified: z.string().date(),
+    last_verified: z.iso.date(),
   }),
 });
 

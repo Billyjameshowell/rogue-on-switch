@@ -1,0 +1,17 @@
+---
+import type { DirectoryGame } from '../data/directory';
+type Props = { games: DirectoryGame[]; ranked?: boolean };
+const { games, ranked = false } = Astro.props;
+const List = ranked ? 'ol' : 'ul';
+---
+<List class:list={['related', { ranked }]}>
+  {games.map((game) => (
+    <li>
+      <a href={`/games/${game.slug}/`}>
+        <h2>{game.title}</h2>
+        <p class="card-facts">{game.playstyle} · {game.runLength} · {game.price}</p>
+        <p>{game.bestFor ?? game.summary}</p>
+      </a>
+    </li>
+  ))}
+</List>

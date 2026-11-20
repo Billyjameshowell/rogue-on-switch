@@ -1,4 +1,45 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro'; import SiteHeader from '../../components/SiteHeader.astro'; import GameTable from '../../components/GameTable.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import GameTable from '../../components/GameTable.astro';
+import { games } from '../../data/games';
 ---
-<BaseLayout title="All roguelikes on Nintendo Switch | Rogue On Switch"><SiteHeader /><main class="shell"><p class="breadcrumb"><a href="/">Home</a> / Games</p><section class="detail"><p class="kicker">The directory</p><h1>Every run starts somewhere.</h1><p>Browse our launch directory of Switch roguelikes, roguelites, and clearly labelled run-based hybrids.</p></section><GameTable showRelease /></main></BaseLayout>
+<BaseLayout title="All roguelikes on Nintendo Switch | Rogue On Switch" description={`All ${games.length} roguelikes, roguelites and run-based hybrids in the Rogue On Switch directory, with release dates, prices and co-op.`}>
+  <Breadcrumb trail={[['Games']]} />
+  <section class="detail directory-intro">
+    <h1>Every run starts somewhere.</h1>
+    <p>The directory lists {games.length} roguelikes, roguelites and run-based hybrids on Switch. Type in the search box to filter by name, genre or playstyle.</p>
+    <p class="search-status" role="status" aria-live="polite" hidden></p>
+  </section>
+  <GameTable showRelease />
+  <script>
+    // Filters the table from the header search box. Without JavaScript the full table still shows.
+    const input = document.querySelector<HTMLInputElement>('#site-search');
+    const status = document.querySelector<HTMLElement>('.search-status');
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>('.game-table tbody tr')];
+    const filter = () => {
+      const terms = (input?.value ?? '').toLowerCase().trim().split(/\s+/).filter(Boolean);
+      let shown = 0;
+      for (const row of rows) {
+        const match = terms.every((term) => row.dataset.search?.includes(term));
+        row.hidden = !match;
+        if (match) shown += 1;
+      }
+      if (status) {
+        status.hidden = terms.length === 0;
+        status.textContent = shown ? `Showing ${shown} of ${rows.length} games.` : 'No games match that search.';
+      }
+    };
+    if (input) {
+      input.value = new URLSearchParams(location.search).get('q') ?? '';
+      input.form?.addEventListener('submit', (event) => event.preventDefault());
+      input.addEventListener('input', () => {
+        const url = new URL(location.href);
+        if (input.value) url.searchParams.set('q', input.value); else url.searchParams.delete('q');
+        history.replaceState(null, '', url);
+        filter();
+      });
+      filter();
+    }
+  </script>
+</BaseLayout>
