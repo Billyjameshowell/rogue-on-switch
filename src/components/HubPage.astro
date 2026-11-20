@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from './Breadcrumb.astro';
+import GameCards from './GameCards.astro';
+import type { DirectoryGame } from '../data/directory';
+import { siteOrigin } from '../lib/site';
+
+type Props = { section: [label: string, href?: string]; title: string; heading?: string; description: string; picks: DirectoryGame[]; ranked?: boolean; metaTitle?: string };
+const { section, title, heading = title, description, picks, ranked = false, metaTitle = `${title} | Rogue On Switch` } = Astro.props;
+const jsonLd = { '@context': 'https://schema.org', '@type': 'ItemList', name: title, itemListElement: picks.map((game, index) => ({ '@type': 'ListItem', position: index + 1, name: game.title, url: `${siteOrigin}/games/${game.slug}/` })) };
+---
+<BaseLayout title={metaTitle} description={description}>
+  <Breadcrumb trail={[section, [heading]]} />
+  <article class="detail">
+    <h1>{heading}</h1>
+    <p>{description}</p>
+    <GameCards games={picks} ranked={ranked} />
+  </article>
+  <script slot="end" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+</BaseLayout>

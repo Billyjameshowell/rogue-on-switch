@@ -1,10 +1,25 @@
 ---
+import Brand from './Brand.astro';
 import PixelUiIcon from './PixelUiIcon.astro';
+
+const links = [
+  ['/games/', 'Games'],
+  ['/best/best-roguelikes-on-nintendo-switch/', 'Best'],
+  ['/genre/action/', 'Genres'],
+  ['/features/local-co-op/', 'Features'],
+  ['/collections/hidden-gems/', 'Collections'],
+] as const;
+const section = (href: string) => `/${href.split('/')[1]}/`;
+const current = section(Astro.url.pathname);
 ---
 <header class="site-header">
-  <a class="brand" href="/"><strong>ROGUE</strong><span>ON SWITCH</span></a>
+  <Brand />
   <nav aria-label="Primary">
-    <a href="/games/">Games</a><a href="/best/best-roguelikes-on-nintendo-switch/">Best</a><a href="/genre/action/">Genres</a><a href="/features/local-co-op/">Features</a><a href="/collections/hidden-gems/">Collections</a>
+    {links.map(([href, label]) => <a href={href} aria-current={section(href) === current ? 'page' : undefined}>{label}</a>)}
   </nav>
-  <a class="search" href="/games/" aria-label="Search games"><PixelUiIcon name="search" /><span>Search games</span></a>
+  <form class="search" role="search" action="/games/" method="get">
+    <PixelUiIcon name="search" />
+    <label class="sr-only" for="site-search">Search games</label>
+    <input id="site-search" type="search" name="q" placeholder="Search games" autocomplete="off" enterkeyhint="search" />
+  </form>
 </header>

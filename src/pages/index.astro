@@ -1,23 +1,56 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SiteHeader from '../components/SiteHeader.astro';
 import PixelIcon from '../components/PixelIcon.astro';
 import PixelButton from '../components/PixelButton.astro';
 import PixelBadge from '../components/PixelBadge.astro';
 import GuidanceMark from '../components/GuidanceMark.astro';
 import PixelUiIcon from '../components/PixelUiIcon.astro';
 import GameTable from '../components/GameTable.astro';
-import { guideTopics, playstyleColor as color } from '../data/games';
-const styles = [['Action','action','Fast reflexes, close combat, pure adrenaline.'],['Cards','cards','Deckbuilding and tactical card combat.'],['Tactics','tactics','Grid-based strategy and careful planning.'],['Shooter','shooter','Guns, bullets, and screen-clearing chaos.'],['Co-op','coop','Team up with friends for chaotic co-op runs.']] as const;
+import { playstyleColor } from '../data/games';
+import { guides, playstyles } from '../data/hubs';
+
+const bestFor = ['Players who enjoy fast combat and fluid movement', 'Those who love strong progression between runs', 'Anyone who wants a story that unfolds as they play'];
+const skipIf = ['You prefer turn-based or slow-paced combat', 'You want long, careful planning between runs', 'You’re not into frequent restarts on failure'];
 ---
 <BaseLayout title="Rogue On Switch — Find your next great run">
-  <SiteHeader />
-  <main class="shell">
-    <section class="hero"><div><h1>Find your next<br />great run on<br /><em>Nintendo Switch.</em></h1><p>Rogue On Switch is an independent editorial directory<br />of roguelikes and roguelites playable on Nintendo Switch.<br />Curated lists, honest takes, and practical filters<br />to help you find games you’ll love.</p><PixelButton href="#browse" label="Explore games" /></div><div class="hero-art" aria-label="Pixel-art dungeon explorer at a ruined gate"></div></section>
-    <section class="section"><p class="kicker">Browse by playstyle</p><div class="playstyles">{styles.map(([name,icon,copy]) => <a class="playstyle" href={`/genre/${name.toLowerCase()}/`} style={`--color:${color[name]}`}><PixelIcon name={icon} label={`${name} playstyle`} /><b>{name}</b><span>{copy}</span></a>)}</div></section>
-    <section class="section"><p class="kicker">Editor's pick</p><div class="feature"><div class="feature-visual"><h2>Hades</h2></div><div class="feature-copy"><h2>Defy the god of the dead.</h2><p>As you hack and slash through the ever-shifting Underworld. Tight combat, meaningful choices, and unforgettable characters make every run feel epic.</p><PixelBadge label="Action" color="var(--action)" /></div><div class="feature-guidance"><div><h3>Best for</h3><p><GuidanceMark />Players who enjoy fast combat and fluid movement<br /><GuidanceMark />Those who love strong progression between runs<br /><GuidanceMark />Anyone who wants a story that unfolds as they play</p></div><div><h3 class="skip">Skip if</h3><p><GuidanceMark variant="cross" />You prefer turn-based or slow-paced combat<br /><GuidanceMark variant="cross" />You want long, careful planning between runs<br /><GuidanceMark variant="cross" />You’re not into frequent restarts on failure</p></div></div></div></section>
-    <section class="section" id="browse"><div class="directory-head"><p class="kicker">Browse games</p></div><GameTable /></section>
-    <section class="section"><div class="field-guide"><div><PixelUiIcon name="book-open" label="Open field guide" /><p class="kicker">The field guide</p><h2>Useful answers, not store copy.</h2><p>Deep dives, genre explainers, and practical guides to help you get the most out of roguelikes.</p></div>{guideTopics.slice(0,3).map(([,title,copy]) => <a href={`/best/${title.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-$/, '')}/`}><h3>{title}</h3><p>{copy}</p></a>)}</div></section>
-  </main>
-  <footer class="footer"><a class="brand" href="/"><strong>ROGUE</strong><span>ON SWITCH</span></a><p>Rogue On Switch is an independent editorial directory and is not affiliated with, endorsed by, or sponsored by any game developer, publisher, or platform holder.</p><span>About　 Contact　 Editorial Policy　 Privacy</span></footer>
+  <section class="hero">
+    <div>
+      <h1>Find your next<br />great run on<br /><em>Nintendo Switch.</em></h1>
+      <p>Rogue On Switch is an independent directory of roguelikes and roguelites on Nintendo Switch. Each game lists its run length, price and co-op, with honest notes on who it suits.</p>
+      <PixelButton href="#browse" label="Explore games" />
+    </div>
+    <div class="hero-art" role="img" aria-label="Pixel-art dungeon explorer at a ruined gate"></div>
+  </section>
+  <section class="section" aria-labelledby="playstyles-title">
+    <h2 id="playstyles-title" class="section-title">Browse by playstyle</h2>
+    <ul class="playstyles">{playstyles.map((style) => (
+      <li><a class="playstyle" href={`/genre/${style.slug}/`} style={`--color:${playstyleColor[style.name]}`}><PixelIcon name={style.icon} /><b>{style.name}</b><span>{style.blurb}</span></a></li>
+    ))}</ul>
+  </section>
+  <section class="section" aria-labelledby="pick-title">
+    <h2 id="pick-title" class="section-title">Editor's pick</h2>
+    <div class="feature">
+      <div class="feature-visual"><h3><a href="/games/hades/">Hades</a></h3></div>
+      <div class="feature-copy">
+        <p class="tagline">Defy the god of the dead.</p>
+        <p>You hack and slash through an ever-shifting Underworld, and tight combat, meaningful choices and memorable characters make every run feel epic.</p>
+        <PixelBadge label="Action" color={playstyleColor.Action} />
+        <a class="text-link" href="/games/hades/">Read the Hades page</a>
+      </div>
+      <div class="feature-guidance">
+        <div><h3>Best for</h3><ul>{bestFor.map((line) => <li><GuidanceMark />{line}</li>)}</ul></div>
+        <div><h3 class="skip">Skip if</h3><ul>{skipIf.map((line) => <li><GuidanceMark variant="cross" />{line}</li>)}</ul></div>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="browse" aria-labelledby="browse-title">
+    <h2 id="browse-title" class="section-title">Browse games</h2>
+    <GameTable />
+  </section>
+  <section class="section">
+    <div class="field-guide">
+      <div><PixelUiIcon name="book-open" /><h2>Useful answers, not store copy.</h2><p>These guides group the directory by how you like to play.</p></div>
+      {guides.slice(0, 3).map((guide) => <a href={`/best/${guide.slug}/`}><h3>{guide.title}</h3><p>{guide.description}</p></a>)}
+    </div>
+  </section>
 </BaseLayout>
