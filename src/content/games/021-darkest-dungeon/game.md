@@ -22,7 +22,7 @@ last_verified: "2026-07-10"
 
 # Darkest Dungeon
 
-*Darkest Dungeon* is a grim, single-player dungeon crawler built around tactical party combat and a stress system: heroes can develop afflictions as well as take physical damage. Expeditions combine procedural dungeons, town management, and permadeath, making preparation and recovery as important as combat.
+*Darkest Dungeon* is a grim, single-player dungeon crawler built around tactical party combat and a stress system: heroes can develop afflictions as well as take physical damage. Expeditions combine procedural dungeons, town management, and permadeath, making preparation and recovery as important as combat. For a lighter party adventure with co-op, try [For The King on Switch](/games/for-the-king/).
 
 The Nintendo Switch edition launched on January 18, 2018. Its U.S. regular price is $24.99; sales can change the purchase price. The included cover image is Nintendo's official storefront artwork.
 

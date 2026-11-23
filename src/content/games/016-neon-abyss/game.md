@@ -22,7 +22,7 @@ last_verified: "2026-07-10"
 
 # Neon Abyss
 
-*Neon Abyss* is a single-player run-and-gun roguelike in which a member of the Grim Squad descends to defeat the New Gods. Procedurally assembled dungeons are paired with unrestricted item stacking: pickups can combine into dramatic builds, while newly unlocked rooms, bosses, rules, and endings expand later attempts. It also breaks up combat with optional minigames.
+*Neon Abyss* is a single-player run-and-gun roguelike in which a member of the Grim Squad descends to defeat the New Gods. Procedurally assembled dungeons are paired with unrestricted item stacking: pickups can combine into dramatic builds, while new rooms, bosses, rules, and endings earned along the way expand later attempts. It also breaks up combat with optional minigames.
 
 The Nintendo Switch edition released on July 14, 2020. Its standard U.S. eShop price is $19.99; check the store for current sales. The locally stored image is official Nintendo Store artwork.
 
