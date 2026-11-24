@@ -6,56 +6,58 @@ export type Console = 'switch' | 'switch-2';
 
 export type Game = {
   slug: string; title: string; playstyle: Playstyle; genre: string; classification: 'Roguelike' | 'Roguelite' | 'Hybrid';
-  summary: string; bestFor: string; skipIf: string; runLength: string; price: string; coOp: string; difficulty: string;
-  progression: string; switchNotes: string; sourceUrl: string; lastChecked: string;
+  summary: string; runLength: string; price: string; coOp: string; difficulty: string;
+  /** Nintendo US store page and the date its facts were last checked. Games with a research package take both from it instead. */
+  sourceUrl?: string; lastChecked?: string;
+  /** Written editorial. A page shows each section only when it has been written for that game. */
+  bestFor?: string; skipIf?: string; progression?: string; switchNotes?: string;
   /** Nintendo US eShop release date (ISO). */
   releaseDate: string;
   /** Native Nintendo versions. 'switch-2' means a Switch 2 game or a Switch 2 Edition, not backward compatibility. */
   consoles: Console[];
 };
 
-type Editorial = 'summary' | 'bestFor' | 'skipIf' | 'progression' | 'switchNotes' | 'sourceUrl' | 'lastChecked';
-// Editorial fields are optional per row; rows without them fall back to the generic copy below.
-const seed: (Omit<Game, 'slug' | Editorial> & Partial<Pick<Game, Editorial>>)[] = [
+// A row without a summary gets one built from its own facts (see `games` below).
+const seed: (Omit<Game, 'slug' | 'summary'> & Partial<Pick<Game, 'summary'>>)[] = [
   { title: 'Hades', releaseDate: '2020-09-17', consoles: ['switch'], playstyle: 'Action', genre: 'Action', classification: 'Roguelite', runLength: '30–60 min', price: '$24.99', coOp: 'No', difficulty: 'Medium' },
   { title: 'Dead Cells', releaseDate: '2018-08-07', consoles: ['switch'], playstyle: 'Action', genre: 'Metroidvania', classification: 'Roguelite', runLength: '30–50 min', price: '$24.99', coOp: 'No', difficulty: 'Hard' },
   { title: 'Slay the Spire', releaseDate: '2019-06-06', consoles: ['switch'], playstyle: 'Cards', genre: 'Deckbuilding', classification: 'Roguelike', runLength: '30–90 min', price: '$24.99', coOp: 'No', difficulty: 'Medium' },
   { title: 'Balatro', releaseDate: '2024-02-20', consoles: ['switch'], playstyle: 'Cards', genre: 'Poker deckbuilder', classification: 'Roguelike', runLength: '20–45 min', price: '$14.99', coOp: 'No', difficulty: 'Easy to learn' },
   { title: 'Into the Breach', releaseDate: '2018-08-28', consoles: ['switch'], playstyle: 'Tactics', genre: 'Tactics', classification: 'Roguelike', runLength: '20–45 min', price: '$14.99', coOp: 'No', difficulty: 'Hard' },
-  { title: 'The Last Spell', releaseDate: '2023-03-09', consoles: ['switch'], playstyle: 'Tactics', genre: 'Tactical defense', classification: 'Roguelite', runLength: '45–90 min', price: '$24.99', coOp: 'No', difficulty: 'Hard' },
+  { title: 'The Last Spell', releaseDate: '2023-03-09', consoles: ['switch'], playstyle: 'Tactics', genre: 'Tactical defense', classification: 'Roguelite', runLength: '45–90 min', price: '$24.99', coOp: 'No', difficulty: 'Hard', sourceUrl: 'https://www.nintendo.com/us/store/products/the-last-spell-switch/', lastChecked: '2026-11-18' },
   { title: 'Vampire Survivors', releaseDate: '2023-08-17', consoles: ['switch'], playstyle: 'Action', genre: 'Bullet heaven', classification: 'Roguelite', runLength: '15–30 min', price: '$4.99', coOp: 'Local' , difficulty: 'Easy' },
   { title: 'Enter the Gungeon', releaseDate: '2017-12-14', consoles: ['switch'], playstyle: 'Shooter', genre: 'Twin-stick shooter', classification: 'Roguelike', runLength: '30–60 min', price: '$14.99', coOp: 'Local', difficulty: 'Hard' },
   { title: 'Risk of Rain 2', releaseDate: '2019-08-30', consoles: ['switch'], playstyle: 'Shooter', genre: 'Third-person shooter', classification: 'Roguelite', runLength: '45–120 min', price: '$24.99', coOp: 'Online', difficulty: 'Medium' },
   { title: 'Spelunky 2', releaseDate: '2021-08-26', consoles: ['switch'], playstyle: 'Action', genre: 'Platformer', classification: 'Roguelike', runLength: '15–40 min', price: '$19.99', coOp: 'Local', difficulty: 'Very hard' },
   { title: 'Cult of the Lamb', releaseDate: '2022-08-11', consoles: ['switch', 'switch-2'], playstyle: 'Action', genre: 'Action management', classification: 'Roguelite', runLength: '20–40 min', price: '$24.99', coOp: 'Local', difficulty: 'Easy' },
   { title: 'Children of Morta', releaseDate: '2019-11-20', consoles: ['switch'], playstyle: 'Co-op', genre: 'Action RPG', classification: 'Roguelite', runLength: '20–45 min', price: '$21.99', coOp: 'Local', difficulty: 'Medium' },
-  { title: 'Ember Knights', releaseDate: '2023-07-18', consoles: ['switch'], playstyle: 'Co-op', genre: 'Action', classification: 'Roguelite', runLength: '20–35 min', price: '$19.99', coOp: 'Local', difficulty: 'Medium' },
+  { title: 'Ember Knights', releaseDate: '2023-07-18', consoles: ['switch'], playstyle: 'Co-op', genre: 'Action', classification: 'Roguelite', runLength: '20–35 min', price: '$19.99', coOp: 'Local', difficulty: 'Medium', sourceUrl: 'https://www.nintendo.com/us/store/products/ember-knights-switch/', lastChecked: '2026-11-18' },
   { title: 'Wizard of Legend', releaseDate: '2018-05-15', consoles: ['switch'], playstyle: 'Co-op', genre: 'Spell action', classification: 'Roguelite', runLength: '20–40 min', price: '$15.99', coOp: 'Local', difficulty: 'Hard' },
   { title: 'Dicey Dungeons', releaseDate: '2020-12-15', consoles: ['switch'], playstyle: 'Cards', genre: 'Dice deckbuilder', classification: 'Roguelike', runLength: '20–35 min', price: '$14.99', coOp: 'No', difficulty: 'Medium' },
   { title: 'Monster Train', releaseDate: '2021-08-19', consoles: ['switch'], playstyle: 'Cards', genre: 'Deckbuilding', classification: 'Roguelite', runLength: '35–60 min', price: '$24.99', coOp: 'No', difficulty: 'Medium' },
-  { title: 'Wildfrost', releaseDate: '2023-04-12', consoles: ['switch'], playstyle: 'Cards', genre: 'Deckbuilding', classification: 'Roguelike', runLength: '25–45 min', price: '$19.99', coOp: 'No', difficulty: 'Hard' },
+  { title: 'Wildfrost', releaseDate: '2023-04-12', consoles: ['switch'], playstyle: 'Cards', genre: 'Deckbuilding', classification: 'Roguelike', runLength: '25–45 min', price: '$19.99', coOp: 'No', difficulty: 'Hard', sourceUrl: 'https://www.nintendo.com/us/store/products/wildfrost-switch/', lastChecked: '2026-11-18' },
   { title: 'Loop Hero', releaseDate: '2021-12-09', consoles: ['switch'], playstyle: 'Tactics', genre: 'Auto-battler', classification: 'Roguelite', runLength: '25–50 min', price: '$14.99', coOp: 'No', difficulty: 'Medium' },
-  { title: 'Crown Trick', releaseDate: '2020-10-16', consoles: ['switch'], playstyle: 'Tactics', genre: 'Dungeon tactics', classification: 'Roguelike', runLength: '30–60 min', price: '$29.99', coOp: 'No', difficulty: 'Medium' },
-  { title: 'Shovel Knight Dig', releaseDate: '2022-09-23', consoles: ['switch'], playstyle: 'Action', genre: 'Platformer', classification: 'Roguelite', runLength: '15–30 min', price: '$24.99', coOp: 'No', difficulty: 'Medium' },
+  { title: 'Crown Trick', releaseDate: '2020-10-16', consoles: ['switch'], playstyle: 'Tactics', genre: 'Dungeon tactics', classification: 'Roguelike', runLength: '30–60 min', price: '$29.99', coOp: 'No', difficulty: 'Medium', sourceUrl: 'https://www.nintendo.com/us/store/products/crown-trick-switch/', lastChecked: '2026-11-18' },
+  { title: 'Shovel Knight Dig', releaseDate: '2022-09-23', consoles: ['switch'], playstyle: 'Action', genre: 'Platformer', classification: 'Roguelite', runLength: '15–30 min', price: '$24.99', coOp: 'No', difficulty: 'Medium', sourceUrl: 'https://www.nintendo.com/us/store/products/shovel-knight-dig-switch/', lastChecked: '2026-11-18' },
   { title: 'Rogue Legacy 2', releaseDate: '2022-11-09', consoles: ['switch'], playstyle: 'Action', genre: 'Platformer', classification: 'Roguelite', runLength: '15–35 min', price: '$24.99', coOp: 'No', difficulty: 'Medium' },
-  { title: 'Have a Nice Death', releaseDate: '2023-03-22', consoles: ['switch'], playstyle: 'Action', genre: 'Action platformer', classification: 'Roguelite', runLength: '20–45 min', price: '$24.99', coOp: 'No', difficulty: 'Hard' },
+  { title: 'Have a Nice Death', releaseDate: '2023-03-22', consoles: ['switch'], playstyle: 'Action', genre: 'Action platformer', classification: 'Roguelite', runLength: '20–45 min', price: '$24.99', coOp: 'No', difficulty: 'Hard', sourceUrl: 'https://www.nintendo.com/us/store/products/have-a-nice-death-switch/', lastChecked: '2026-11-18' },
   { title: 'Neon Abyss', releaseDate: '2020-07-14', consoles: ['switch'], playstyle: 'Shooter', genre: 'Platform shooter', classification: 'Roguelite', runLength: '25–45 min', price: '$19.99', coOp: 'No', difficulty: 'Medium' },
   { title: 'Skul: The Hero Slayer', releaseDate: '2021-10-21', consoles: ['switch'], playstyle: 'Action', genre: 'Action platformer', classification: 'Roguelite', runLength: '25–50 min', price: '$19.99', coOp: 'No', difficulty: 'Hard' },
   { title: 'The Binding of Isaac: Repentance', releaseDate: '2017-03-17', consoles: ['switch'], playstyle: 'Shooter', genre: 'Twin-stick shooter', classification: 'Roguelike', runLength: '25–50 min', price: '$59.99', coOp: 'Local', difficulty: 'Hard' },
-  { title: 'Nuclear Throne', releaseDate: '2019-03-20', consoles: ['switch'], playstyle: 'Shooter', genre: 'Twin-stick shooter', classification: 'Roguelike', runLength: '15–30 min', price: '$11.99', coOp: 'Local', difficulty: 'Hard' },
-  { title: 'Downwell', releaseDate: '2019-01-31', consoles: ['switch'], playstyle: 'Action', genre: 'Vertical shooter', classification: 'Roguelike', runLength: '10–20 min', price: '$2.99', coOp: 'No', difficulty: 'Hard' },
-  { title: 'Crypt of the NecroDancer', releaseDate: '2018-02-01', consoles: ['switch'], playstyle: 'Action', genre: 'Rhythm dungeon', classification: 'Roguelike', runLength: '15–30 min', price: '$19.99', coOp: 'Local', difficulty: 'Hard' },
+  { title: 'Nuclear Throne', releaseDate: '2019-03-20', consoles: ['switch'], playstyle: 'Shooter', genre: 'Twin-stick shooter', classification: 'Roguelike', runLength: '15–30 min', price: '$11.99', coOp: 'Local', difficulty: 'Hard', sourceUrl: 'https://www.nintendo.com/us/store/products/nuclear-throne-switch/', lastChecked: '2026-11-18' },
+  { title: 'Downwell', releaseDate: '2019-01-31', consoles: ['switch'], playstyle: 'Action', genre: 'Vertical shooter', classification: 'Roguelike', runLength: '10–20 min', price: '$2.99', coOp: 'No', difficulty: 'Hard', sourceUrl: 'https://www.nintendo.com/us/store/products/downwell-switch/', lastChecked: '2026-11-18' },
+  { title: 'Crypt of the NecroDancer', releaseDate: '2018-02-01', consoles: ['switch'], playstyle: 'Action', genre: 'Rhythm dungeon', classification: 'Roguelike', runLength: '15–30 min', price: '$19.99', coOp: 'Local', difficulty: 'Hard', sourceUrl: 'https://www.nintendo.com/us/store/products/crypt-of-the-necrodancer-nintendo-switch-edition-switch/', lastChecked: '2026-11-18' },
   { title: 'Darkest Dungeon', releaseDate: '2018-01-18', consoles: ['switch'], playstyle: 'Tactics', genre: 'Turn-based RPG', classification: 'Roguelite', runLength: '30–60 min', price: '$24.99', coOp: 'No', difficulty: 'Hard' },
   { title: 'Griftlands', releaseDate: '2021-06-04', consoles: ['switch'], playstyle: 'Cards', genre: 'Deckbuilding', classification: 'Roguelite', runLength: '45–90 min', price: '$19.99', coOp: 'No', difficulty: 'Medium' },
-  { title: 'One Step From Eden', releaseDate: '2020-03-26', consoles: ['switch'], playstyle: 'Action', genre: 'Deckbuilding action', classification: 'Roguelite', runLength: '20–40 min', price: '$19.99', coOp: 'Local', difficulty: 'Hard' },
-  { title: 'Fights in Tight Spaces', releaseDate: '2023-05-25', consoles: ['switch'], playstyle: 'Tactics', genre: 'Deckbuilding tactics', classification: 'Roguelike', runLength: '25–45 min', price: '$24.99', coOp: 'No', difficulty: 'Medium' },
-  { title: 'Tangledeep', releaseDate: '2019-01-31', consoles: ['switch'], playstyle: 'Tactics', genre: 'Dungeon crawler', classification: 'Roguelike', runLength: '30–60 min', price: '$19.99', coOp: 'No', difficulty: 'Medium' },
-  { title: 'Flame in the Flood', releaseDate: '2017-10-12', consoles: ['switch'], playstyle: 'Tactics', genre: 'Survival', classification: 'Roguelite', runLength: '20–45 min', price: '$14.99', coOp: 'No', difficulty: 'Medium' },
-  { title: 'Streets of Rogue', releaseDate: '2019-07-12', consoles: ['switch'], playstyle: 'Co-op', genre: 'Immersive sim', classification: 'Roguelite', runLength: '20–40 min', price: '$19.99', coOp: 'Local', difficulty: 'Medium' },
-  { title: 'Ship of Fools', releaseDate: '2022-11-22', consoles: ['switch'], playstyle: 'Co-op', genre: 'Action', classification: 'Roguelite', runLength: '20–40 min', price: '$14.99', coOp: 'Local', difficulty: 'Medium' },
-  { title: 'Ravenswatch', releaseDate: '2025-01-23', consoles: ['switch'], playstyle: 'Co-op', genre: 'Action RPG', classification: 'Roguelite', runLength: '30–60 min', price: '$24.99', coOp: 'Online', difficulty: 'Hard' },
-  { title: 'Astral Ascent', releaseDate: '2023-11-14', consoles: ['switch', 'switch-2'], playstyle: 'Action', genre: 'Action platformer', classification: 'Roguelite', runLength: '25–50 min', price: '$24.99', coOp: 'Local', difficulty: 'Medium' },
-  { title: 'Warm Snow', releaseDate: '2023-10-20', consoles: ['switch'], playstyle: 'Action', genre: 'Action RPG', classification: 'Roguelite', runLength: '25–50 min', price: '$19.99', coOp: 'No', difficulty: 'Medium' },
+  { title: 'One Step From Eden', releaseDate: '2020-03-26', consoles: ['switch'], playstyle: 'Action', genre: 'Deckbuilding action', classification: 'Roguelite', runLength: '20–40 min', price: '$19.99', coOp: 'Local', difficulty: 'Hard', sourceUrl: 'https://www.nintendo.com/us/store/products/one-step-from-eden-switch/', lastChecked: '2026-11-18' },
+  { title: 'Fights in Tight Spaces', releaseDate: '2023-05-25', consoles: ['switch'], playstyle: 'Tactics', genre: 'Deckbuilding tactics', classification: 'Roguelike', runLength: '25–45 min', price: '$24.99', coOp: 'No', difficulty: 'Medium', sourceUrl: 'https://www.nintendo.com/us/store/products/fights-in-tight-spaces-switch/', lastChecked: '2026-11-18' },
+  { title: 'Tangledeep', releaseDate: '2019-01-31', consoles: ['switch'], playstyle: 'Tactics', genre: 'Dungeon crawler', classification: 'Roguelike', runLength: '30–60 min', price: '$19.99', coOp: 'No', difficulty: 'Medium', sourceUrl: 'https://www.nintendo.com/us/store/products/tangledeep-switch/', lastChecked: '2026-11-18' },
+  { title: 'Flame in the Flood', releaseDate: '2017-10-12', consoles: ['switch'], playstyle: 'Tactics', genre: 'Survival', classification: 'Roguelite', runLength: '20–45 min', price: '$14.99', coOp: 'No', difficulty: 'Medium', sourceUrl: 'https://www.nintendo.com/us/store/products/the-flame-in-the-flood-complete-edition-switch/', lastChecked: '2026-11-18' },
+  { title: 'Streets of Rogue', releaseDate: '2019-07-12', consoles: ['switch'], playstyle: 'Co-op', genre: 'Immersive sim', classification: 'Roguelite', runLength: '20–40 min', price: '$19.99', coOp: 'Local', difficulty: 'Medium', sourceUrl: 'https://www.nintendo.com/us/store/products/streets-of-rogue-switch/', lastChecked: '2026-11-18' },
+  { title: 'Ship of Fools', releaseDate: '2022-11-22', consoles: ['switch'], playstyle: 'Co-op', genre: 'Action', classification: 'Roguelite', runLength: '20–40 min', price: '$14.99', coOp: 'Local', difficulty: 'Medium', sourceUrl: 'https://www.nintendo.com/us/store/products/ship-of-fools-switch/', lastChecked: '2026-11-18' },
+  { title: 'Ravenswatch', releaseDate: '2025-01-23', consoles: ['switch'], playstyle: 'Co-op', genre: 'Action RPG', classification: 'Roguelite', runLength: '30–60 min', price: '$24.99', coOp: 'Online', difficulty: 'Hard', sourceUrl: 'https://www.nintendo.com/us/store/products/ravenswatch-switch/', lastChecked: '2026-11-18' },
+  { title: 'Astral Ascent', releaseDate: '2023-11-14', consoles: ['switch', 'switch-2'], playstyle: 'Action', genre: 'Action platformer', classification: 'Roguelite', runLength: '25–50 min', price: '$24.99', coOp: 'Local', difficulty: 'Medium', sourceUrl: 'https://www.nintendo.com/us/store/products/astral-ascent-switch/', lastChecked: '2026-11-18' },
+  { title: 'Warm Snow', releaseDate: '2023-10-20', consoles: ['switch'], playstyle: 'Action', genre: 'Action RPG', classification: 'Roguelite', runLength: '25–50 min', price: '$19.99', coOp: 'No', difficulty: 'Medium', sourceUrl: 'https://www.nintendo.com/us/store/products/warm-snow-switch/', lastChecked: '2026-11-18' },
   { title: 'Hades II', releaseDate: '2025-09-25', consoles: ['switch', 'switch-2'], playstyle: 'Action', genre: 'Action', classification: 'Roguelite', runLength: '25–45 min', price: '$29.99', coOp: 'No', difficulty: 'Medium',
     bestFor: 'Players who finished Hades and want a longer story, more weapons, and two routes, down through the Underworld or up to the surface.',
     skipIf: 'You want a short game you can finish in a weekend, since the story unfolds across dozens of escape attempts.',
@@ -149,22 +151,12 @@ export const consoleNames: Record<Console, string> = { switch: 'Nintendo Switch'
 const releaseFormat = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 export const formatReleaseDate = (iso: string) => releaseFormat.format(new Date(`${iso}T00:00:00Z`));
 
+// Keeps acronyms such as RPG in capitals.
+const lowerGenre = (genre: string) => genre.split(' ').map((word) => (word === word.toUpperCase() ? word : word.toLowerCase())).join(' ');
+const coOpPhrase: Record<string, string> = { No: 'It has no co-op mode', Local: 'It supports local co-op', Online: 'It supports online co-op', 'Local and online': 'It supports local and online co-op' };
+
 export const games: Game[] = seed.map((game) => ({
   slug: game.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-$/, ''),
-  summary: `${game.title} is a deliberate pick for players who want a ${game.playstyle.toLowerCase()} run with a clear reason to come back.`,
-  bestFor: `Players looking for ${game.playstyle.toLowerCase()} runs that fit a ${game.runLength.toLowerCase()} window.`,
-  skipIf: `You need a low-pressure game or dislike replaying familiar challenges.`,
-  progression: game.classification === 'Roguelike' ? 'Most power comes from learning systems rather than permanent upgrades.' : 'Between runs, permanent upgrades steadily widen your options.',
-  switchNotes: 'Handheld text and controls are comfortable; check this field again before buying for the latest patch notes.',
-  sourceUrl: 'https://www.nintendo.com/us/store/', lastChecked: '2026-07-09',
+  summary: `${game.title} is a ${game.classification.toLowerCase()} ${lowerGenre(game.genre)} game on Nintendo Switch. ${coOpPhrase[game.coOp]}, and a typical run takes ${game.runLength.toLowerCase()}.`,
   ...game,
 }));
-
-export const guideTopics = [
-  ['best-roguelikes-on-nintendo-switch', 'Best Roguelikes on Nintendo Switch', 'The essential starting list, sorted by how you want to play.'],
-  ['best-roguelites-for-beginners', 'Best Roguelites for Beginners', 'Friendly first runs, useful progression, and readable systems.'],
-  ['best-deckbuilding-roguelikes', 'Best Deckbuilding Roguelikes', 'Every card game worth making room for on your Switch.'],
-  ['best-co-op-roguelites', 'Best Co-op Roguelites', 'Runs that are substantially better with another controller nearby.'],
-  ['best-roguelikes-for-short-sessions', 'Best Roguelikes for Short Sessions', 'Games built for a subway ride, a break, or one more run.'],
-  ['best-hidden-gems-under-20', 'Best Hidden Gems Under $20', 'Overlooked, affordable picks with more to show than their price suggests.'],
-] as const;

@@ -2,10 +2,12 @@
 import { Image } from 'astro:assets';
 import ConsoleLogos from './ConsoleLogos.astro';
 import PixelBadge from './PixelBadge.astro';
-import { formatReleaseDate, games, playstyleColor } from '../data/games';
-import { getGameAssetsBySiteSlug, researchFacts } from '../data/research';
-const { showRelease = false, contained = false } = Astro.props as { showRelease?: boolean; contained?: boolean };
-const gameAssets = await getGameAssetsBySiteSlug();
+import { formatReleaseDate, playstyleColor } from '../data/games';
+import { genreLine, getDirectory } from '../data/directory';
+
+type Props = { showRelease?: boolean; contained?: boolean };
+const { showRelease = false, contained = false } = Astro.props;
+const directory = await getDirectory();
 ---
 <div
   class:list={['table-scroll', { 'is-contained': contained }]}
@@ -15,23 +17,21 @@ const gameAssets = await getGameAssetsBySiteSlug();
   tabindex="0"
 >
   <table class="game-table">
-    <thead><tr><th>Game</th><th>Console</th>{showRelease && <th>Released</th>}<th>Run length</th><th>Price (USD)</th><th>Genre</th><th>Playstyle</th><th>Co-op</th></tr></thead>
-    <tbody>{games.map((seed) => {
-      const asset = gameAssets.get(seed.slug);
-      const game = researchFacts(seed, asset?.entry) ?? seed;
-      return <tr>
-        <td><a class="game-cell" href={`/games/${game.slug}/`}>{asset?.cover && <Image class="game-thumbnail" src={asset.cover} width={104} height={60} alt="" />}<span>{game.title}</span></a></td>
+    <thead><tr><th scope="col">Game</th><th scope="col">Console</th>{showRelease && <th scope="col">Released</th>}<th scope="col">Run length</th><th scope="col">Price (USD)</th><th scope="col">Genre</th><th scope="col">Playstyle</th><th scope="col">Co-op</th></tr></thead>
+    <tbody>{directory.map((game) => (
+      <tr data-search={[game.title, game.genre, game.classification, game.playstyle, game.coOp === 'No' ? '' : 'co-op'].join(' ').toLowerCase()}>
+        <th scope="row"><a class="game-cell" href={`/games/${game.slug}/`}>{game.cover && <Image class="game-thumbnail" src={game.cover} width={104} height={60} alt="" />}<span>{game.title}</span></a></th>
         <td><ConsoleLogos consoles={game.consoles} /></td>
         {showRelease && <td><time datetime={game.releaseDate}>{formatReleaseDate(game.releaseDate)}</time></td>}
-        <td>{game.runLength}</td><td>{game.price}</td><td>{game.genre}, {game.classification}</td>
+        <td>{game.runLength}</td><td>{game.price}</td><td>{genreLine(game)}</td>
         <td><PixelBadge label={game.playstyle} color={playstyleColor[game.playstyle]} /></td><td>{game.coOp}</td>
-      </tr>;
-    })}</tbody>
+      </tr>
+    ))}</tbody>
   </table>
 </div>
 <p class="table-note">{contained && 'Scroll the table for the full list. '}Every Switch game here also plays on Switch 2. A Switch 2 logo marks a Switch 2 game or a Switch 2 Edition.</p>
 {contained && <script>
-  for (const el of document.querySelectorAll('.table-scroll.is-contained')) {
+  for (const el of document.querySelectorAll<HTMLElement>('.table-scroll.is-contained')) {
     el.addEventListener('keydown', (event) => {
       if (event.target !== el) return;
       const line = Number.parseFloat(getComputedStyle(el).getPropertyValue('--table-row')) || 43;

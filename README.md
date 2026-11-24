@@ -1,43 +1,28 @@
-# Astro Starter Kit: Minimal
+# Rogue On Switch
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Source for [switchroguelikes.com](https://switchroguelikes.com), an independent directory of roguelikes and roguelites on Nintendo Switch. It is a static Astro site.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Commands
 
-## 🚀 Project Structure
+Astro needs Node 22.23.4 or newer. CI uses Node 24.
 
-Inside of your Astro project, you'll see the following folders and files:
+| Command | What it does |
+| :-- | :-- |
+| `npm ci` | Install dependencies |
+| `npm run dev` | Start the dev server at `localhost:4321` |
+| `npm run check` | Type-check Astro and TypeScript files |
+| `npm run build` | Build the site into `dist/` |
+| `npm run check:urls` | Confirm the build points at `https://switchroguelikes.com` |
+| `npm run visual-review` | Capture desktop and 390px screenshots of a running preview |
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Where things live
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- `src/data/games.ts` holds every directory game: facts, release date, consoles and any written editorial. A game without a summary gets one built from its facts.
+- `src/content/games/NNN-slug/` holds research packages (`game.md` plus the eShop cover). `src/data/directory.ts` folds a package's facts into its game.
+- `src/assets/covers/{slug}.webp` holds eShop covers for games without a research package.
+- `src/data/hubs.ts` defines the genre, best-of, feature and collection pages, and the sitemap reads the same lists.
+- `internal/` holds private notes that are never imported into the site.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Deploys
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Every push to `main` runs `.github/workflows/astro.yml`, which type-checks, builds, runs the URL check and publishes to GitHub Pages. Pull requests run `visual-review.yml` and post screenshots.
