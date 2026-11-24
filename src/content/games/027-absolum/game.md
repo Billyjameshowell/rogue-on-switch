@@ -14,12 +14,10 @@ players: "1-2"
 developer: "Dotemu, Guard Crush Games, Supamonks"
 publisher: "Dotemu"
 short_description: "Absolum is a roguelite beat 'em up from the Streets of Rage 4 team, on Switch for $24.99 with two-player co-op on one console or online."
-image_file: "cover.webp"
+image_file: "absolum-nintendo-switch-eshop-cover.webp"
 image_source: "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_png/store/software/switch/70010000094401/8757425a4deb56a81c1041075789c23b5ebbe89ae30e9dbf5e3025011d74e70a"
 last_verified: "2026-11-18"
 ---
-
-# Absolum
 
 *Absolum* is on Nintendo Switch for $24.99. It launched on October 9, 2025, and a free Switch 2 Edition upgrade followed on September 17, 2026. Dotemu and Guard Crush Games, the studios behind *Streets of Rage 4*, made it with art and animation from Supamonks.
 

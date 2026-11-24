@@ -6,4 +6,8 @@ import { defineConfig } from 'astro/config';
 // https://docs.astro.build/en/guides/deploy/github/#change-your-github-url-to-a-custom-domain
 export default defineConfig({
   site: 'https://switchroguelikes.com',
+  markdown: {
+    // Straight quotes. Smart punctuation was turning apostrophes into curly quotes.
+    smartypants: false,
+  },
 });

@@ -1,0 +1,860 @@
+{
+  "generatedAt": "2026-11-24T22:35:52.734Z",
+  "site": "https://switchroguelikes.com",
+  "mode": "legacy",
+  "note": "Header, footer, and breadcrumb links are excluded. Counts are contextual body links only.",
+  "orphanMoneyPages": [
+    "/best/best-co-op-roguelites/",
+    "/best/best-hidden-gems-under-20/",
+    "/best/best-roguelikes-for-short-sessions/",
+    "/collections/hidden-gems/",
+    "/collections/under-20/",
+    "/features/local-co-op/",
+    "/features/offline-play/",
+    "/features/short-runs/",
+    "/games/",
+    "/best/best-deckbuilding-roguelikes/",
+    "/best/best-roguelikes-on-nintendo-switch/",
+    "/best/best-roguelites-for-beginners/",
+    "/genre/action/",
+    "/genre/cards/",
+    "/genre/co-op/",
+    "/genre/shooter/",
+    "/genre/tactics/"
+  ],
+  "pages": [
+    {
+      "route": "/",
+      "contextualInbound": 0,
+      "linkedFrom": [],
+      "money": false
+    },
+    {
+      "route": "/best/best-co-op-roguelites/",
+      "contextualInbound": 0,
+      "linkedFrom": [],
+      "money": true
+    },
+    {
+      "route": "/best/best-hidden-gems-under-20/",
+      "contextualInbound": 0,
+      "linkedFrom": [],
+      "money": true
+    },
+    {
+      "route": "/best/best-roguelikes-for-short-sessions/",
+      "contextualInbound": 0,
+      "linkedFrom": [],
+      "money": true
+    },
+    {
+      "route": "/collections/hidden-gems/",
+      "contextualInbound": 0,
+      "linkedFrom": [],
+      "money": true
+    },
+    {
+      "route": "/collections/under-20/",
+      "contextualInbound": 0,
+      "linkedFrom": [],
+      "money": true
+    },
+    {
+      "route": "/features/local-co-op/",
+      "contextualInbound": 0,
+      "linkedFrom": [],
+      "money": true
+    },
+    {
+      "route": "/features/offline-play/",
+      "contextualInbound": 0,
+      "linkedFrom": [],
+      "money": true
+    },
+    {
+      "route": "/features/short-runs/",
+      "contextualInbound": 0,
+      "linkedFrom": [],
+      "money": true
+    },
+    {
+      "route": "/games/",
+      "contextualInbound": 0,
+      "linkedFrom": [],
+      "money": true
+    },
+    {
+      "route": "/best/best-deckbuilding-roguelikes/",
+      "contextualInbound": 1,
+      "linkedFrom": [
+        "/"
+      ],
+      "money": true
+    },
+    {
+      "route": "/best/best-roguelikes-on-nintendo-switch/",
+      "contextualInbound": 1,
+      "linkedFrom": [
+        "/"
+      ],
+      "money": true
+    },
+    {
+      "route": "/best/best-roguelites-for-beginners/",
+      "contextualInbound": 1,
+      "linkedFrom": [
+        "/"
+      ],
+      "money": true
+    },
+    {
+      "route": "/games/blue-prince/",
+      "contextualInbound": 1,
+      "linkedFrom": [
+        "/genre/tactics/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/fights-in-tight-spaces/",
+      "contextualInbound": 1,
+      "linkedFrom": [
+        "/genre/tactics/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/have-a-nice-death/",
+      "contextualInbound": 1,
+      "linkedFrom": [
+        "/genre/action/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/monster-train-2/",
+      "contextualInbound": 1,
+      "linkedFrom": [
+        "/genre/cards/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/moonlighter/",
+      "contextualInbound": 1,
+      "linkedFrom": [
+        "/genre/action/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/ravenswatch/",
+      "contextualInbound": 1,
+      "linkedFrom": [
+        "/genre/co-op/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/rogue-legacy-2/",
+      "contextualInbound": 1,
+      "linkedFrom": [
+        "/genre/action/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/genre/action/",
+      "contextualInbound": 1,
+      "linkedFrom": [
+        "/"
+      ],
+      "money": true
+    },
+    {
+      "route": "/genre/cards/",
+      "contextualInbound": 1,
+      "linkedFrom": [
+        "/"
+      ],
+      "money": true
+    },
+    {
+      "route": "/genre/co-op/",
+      "contextualInbound": 1,
+      "linkedFrom": [
+        "/"
+      ],
+      "money": true
+    },
+    {
+      "route": "/genre/shooter/",
+      "contextualInbound": 1,
+      "linkedFrom": [
+        "/"
+      ],
+      "money": true
+    },
+    {
+      "route": "/genre/tactics/",
+      "contextualInbound": 1,
+      "linkedFrom": [
+        "/"
+      ],
+      "money": true
+    },
+    {
+      "route": "/games/absolum/",
+      "contextualInbound": 2,
+      "linkedFrom": [
+        "/games/dead-cells/",
+        "/genre/action/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/astral-ascent/",
+      "contextualInbound": 2,
+      "linkedFrom": [
+        "/features/local-co-op/",
+        "/genre/action/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/caves-of-qud/",
+      "contextualInbound": 2,
+      "linkedFrom": [
+        "/games/barony/",
+        "/genre/tactics/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/darkest-dungeon/",
+      "contextualInbound": 2,
+      "linkedFrom": [
+        "/games/for-the-king/",
+        "/genre/tactics/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/deadzone-rogue/",
+      "contextualInbound": 2,
+      "linkedFrom": [
+        "/games/risk-of-rain-2/",
+        "/genre/shooter/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/downwell/",
+      "contextualInbound": 2,
+      "linkedFrom": [
+        "/collections/under-20/",
+        "/genre/action/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/flame-in-the-flood/",
+      "contextualInbound": 2,
+      "linkedFrom": [
+        "/collections/under-20/",
+        "/genre/tactics/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/griftlands/",
+      "contextualInbound": 2,
+      "linkedFrom": [
+        "/collections/under-20/",
+        "/genre/cards/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/moonlighter-2-the-endless-vault/",
+      "contextualInbound": 2,
+      "linkedFrom": [
+        "/games/moonlighter/",
+        "/genre/action/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/plateup/",
+      "contextualInbound": 2,
+      "linkedFrom": [
+        "/collections/under-20/",
+        "/genre/co-op/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/shovel-knight-dig/",
+      "contextualInbound": 2,
+      "linkedFrom": [
+        "/collections/hidden-gems/",
+        "/genre/action/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/skul-the-hero-slayer/",
+      "contextualInbound": 2,
+      "linkedFrom": [
+        "/collections/under-20/",
+        "/genre/action/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/star-of-providence/",
+      "contextualInbound": 2,
+      "linkedFrom": [
+        "/collections/under-20/",
+        "/genre/shooter/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/tangledeep/",
+      "contextualInbound": 2,
+      "linkedFrom": [
+        "/collections/under-20/",
+        "/genre/tactics/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/warm-snow/",
+      "contextualInbound": 2,
+      "linkedFrom": [
+        "/collections/under-20/",
+        "/genre/action/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/ball-x-pit/",
+      "contextualInbound": 3,
+      "linkedFrom": [
+        "/collections/under-20/",
+        "/games/vampire-survivors/",
+        "/genre/action/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/crypt-of-the-necrodancer/",
+      "contextualInbound": 3,
+      "linkedFrom": [
+        "/collections/under-20/",
+        "/features/local-co-op/",
+        "/genre/action/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/for-the-king/",
+      "contextualInbound": 3,
+      "linkedFrom": [
+        "/games/darkest-dungeon/",
+        "/games/plateup/",
+        "/genre/tactics/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/hades-ii/",
+      "contextualInbound": 3,
+      "linkedFrom": [
+        "/games/hades/",
+        "/games/ufo-50/",
+        "/genre/action/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/nuclear-throne/",
+      "contextualInbound": 3,
+      "linkedFrom": [
+        "/collections/under-20/",
+        "/features/local-co-op/",
+        "/genre/shooter/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/one-step-from-eden/",
+      "contextualInbound": 3,
+      "linkedFrom": [
+        "/collections/under-20/",
+        "/features/local-co-op/",
+        "/genre/action/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/ship-of-fools/",
+      "contextualInbound": 3,
+      "linkedFrom": [
+        "/collections/under-20/",
+        "/features/local-co-op/",
+        "/genre/co-op/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/wildfrost/",
+      "contextualInbound": 3,
+      "linkedFrom": [
+        "/collections/hidden-gems/",
+        "/collections/under-20/",
+        "/genre/cards/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/barony/",
+      "contextualInbound": 4,
+      "linkedFrom": [
+        "/collections/under-20/",
+        "/games/caves-of-qud/",
+        "/games/plateup/",
+        "/genre/co-op/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/cult-of-the-lamb/",
+      "contextualInbound": 4,
+      "linkedFrom": [
+        "/collections/hidden-gems/",
+        "/features/local-co-op/",
+        "/games/moonlighter/",
+        "/genre/action/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/ufo-50/",
+      "contextualInbound": 4,
+      "linkedFrom": [
+        "/features/local-co-op/",
+        "/games/balatro/",
+        "/games/spelunky-2/",
+        "/genre/cards/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/crown-trick/",
+      "contextualInbound": 5,
+      "linkedFrom": [
+        "/collections/hidden-gems/",
+        "/games/into-the-breach/",
+        "/games/loop-hero/",
+        "/games/the-last-spell/",
+        "/genre/tactics/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/monster-train/",
+      "contextualInbound": 5,
+      "linkedFrom": [
+        "/collections/hidden-gems/",
+        "/games/balatro/",
+        "/games/dicey-dungeons/",
+        "/games/slay-the-spire/",
+        "/genre/cards/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/the-binding-of-isaac-repentance/",
+      "contextualInbound": 5,
+      "linkedFrom": [
+        "/features/local-co-op/",
+        "/games/enter-the-gungeon/",
+        "/games/neon-abyss/",
+        "/games/risk-of-rain-2/",
+        "/genre/shooter/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/spelunky-2/",
+      "contextualInbound": 6,
+      "linkedFrom": [
+        "/collections/under-20/",
+        "/features/local-co-op/",
+        "/games/dead-cells/",
+        "/games/hades/",
+        "/games/vampire-survivors/",
+        "/genre/action/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/streets-of-rogue/",
+      "contextualInbound": 6,
+      "linkedFrom": [
+        "/collections/under-20/",
+        "/features/local-co-op/",
+        "/games/children-of-morta/",
+        "/games/ember-knights/",
+        "/games/wizard-of-legend/",
+        "/genre/co-op/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/neon-abyss/",
+      "contextualInbound": 8,
+      "linkedFrom": [
+        "/collections/under-20/",
+        "/games/deadzone-rogue/",
+        "/games/enter-the-gungeon/",
+        "/games/nuclear-throne/",
+        "/games/risk-of-rain-2/",
+        "/games/star-of-providence/",
+        "/games/the-binding-of-isaac-repentance/",
+        "/genre/shooter/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/risk-of-rain-2/",
+      "contextualInbound": 9,
+      "linkedFrom": [
+        "/features/offline-play/",
+        "/features/short-runs/",
+        "/games/deadzone-rogue/",
+        "/games/enter-the-gungeon/",
+        "/games/neon-abyss/",
+        "/games/nuclear-throne/",
+        "/games/star-of-providence/",
+        "/games/the-binding-of-isaac-repentance/",
+        "/genre/shooter/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/children-of-morta/",
+      "contextualInbound": 10,
+      "linkedFrom": [
+        "/collections/hidden-gems/",
+        "/features/local-co-op/",
+        "/games/barony/",
+        "/games/ember-knights/",
+        "/games/plateup/",
+        "/games/ravenswatch/",
+        "/games/ship-of-fools/",
+        "/games/streets-of-rogue/",
+        "/games/wizard-of-legend/",
+        "/genre/co-op/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/dicey-dungeons/",
+      "contextualInbound": 10,
+      "linkedFrom": [
+        "/collections/hidden-gems/",
+        "/collections/under-20/",
+        "/games/balatro/",
+        "/games/griftlands/",
+        "/games/monster-train-2/",
+        "/games/monster-train/",
+        "/games/slay-the-spire/",
+        "/games/ufo-50/",
+        "/games/wildfrost/",
+        "/genre/cards/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/ember-knights/",
+      "contextualInbound": 11,
+      "linkedFrom": [
+        "/collections/hidden-gems/",
+        "/collections/under-20/",
+        "/features/local-co-op/",
+        "/games/barony/",
+        "/games/children-of-morta/",
+        "/games/plateup/",
+        "/games/ravenswatch/",
+        "/games/ship-of-fools/",
+        "/games/streets-of-rogue/",
+        "/games/wizard-of-legend/",
+        "/genre/co-op/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/enter-the-gungeon/",
+      "contextualInbound": 11,
+      "linkedFrom": [
+        "/collections/under-20/",
+        "/features/local-co-op/",
+        "/features/offline-play/",
+        "/features/short-runs/",
+        "/games/deadzone-rogue/",
+        "/games/neon-abyss/",
+        "/games/nuclear-throne/",
+        "/games/risk-of-rain-2/",
+        "/games/star-of-providence/",
+        "/games/the-binding-of-isaac-repentance/",
+        "/genre/shooter/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/wizard-of-legend/",
+      "contextualInbound": 11,
+      "linkedFrom": [
+        "/collections/hidden-gems/",
+        "/collections/under-20/",
+        "/features/local-co-op/",
+        "/games/barony/",
+        "/games/children-of-morta/",
+        "/games/ember-knights/",
+        "/games/plateup/",
+        "/games/ravenswatch/",
+        "/games/ship-of-fools/",
+        "/games/streets-of-rogue/",
+        "/genre/co-op/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/loop-hero/",
+      "contextualInbound": 13,
+      "linkedFrom": [
+        "/collections/hidden-gems/",
+        "/collections/under-20/",
+        "/games/blue-prince/",
+        "/games/caves-of-qud/",
+        "/games/crown-trick/",
+        "/games/darkest-dungeon/",
+        "/games/fights-in-tight-spaces/",
+        "/games/flame-in-the-flood/",
+        "/games/for-the-king/",
+        "/games/into-the-breach/",
+        "/games/tangledeep/",
+        "/games/the-last-spell/",
+        "/genre/tactics/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/balatro/",
+      "contextualInbound": 18,
+      "linkedFrom": [
+        "/",
+        "/best/best-co-op-roguelites/",
+        "/best/best-deckbuilding-roguelikes/",
+        "/best/best-hidden-gems-under-20/",
+        "/best/best-roguelikes-for-short-sessions/",
+        "/best/best-roguelikes-on-nintendo-switch/",
+        "/best/best-roguelites-for-beginners/",
+        "/collections/under-20/",
+        "/features/offline-play/",
+        "/features/short-runs/",
+        "/games/dicey-dungeons/",
+        "/games/griftlands/",
+        "/games/monster-train-2/",
+        "/games/monster-train/",
+        "/games/slay-the-spire/",
+        "/games/ufo-50/",
+        "/games/wildfrost/",
+        "/genre/cards/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/slay-the-spire/",
+      "contextualInbound": 18,
+      "linkedFrom": [
+        "/",
+        "/best/best-co-op-roguelites/",
+        "/best/best-deckbuilding-roguelikes/",
+        "/best/best-hidden-gems-under-20/",
+        "/best/best-roguelikes-for-short-sessions/",
+        "/best/best-roguelikes-on-nintendo-switch/",
+        "/best/best-roguelites-for-beginners/",
+        "/features/offline-play/",
+        "/features/short-runs/",
+        "/games/balatro/",
+        "/games/dicey-dungeons/",
+        "/games/for-the-king/",
+        "/games/griftlands/",
+        "/games/monster-train-2/",
+        "/games/monster-train/",
+        "/games/ufo-50/",
+        "/games/wildfrost/",
+        "/genre/cards/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/the-last-spell/",
+      "contextualInbound": 19,
+      "linkedFrom": [
+        "/best/best-co-op-roguelites/",
+        "/best/best-deckbuilding-roguelikes/",
+        "/best/best-hidden-gems-under-20/",
+        "/best/best-roguelikes-for-short-sessions/",
+        "/best/best-roguelikes-on-nintendo-switch/",
+        "/best/best-roguelites-for-beginners/",
+        "/features/offline-play/",
+        "/features/short-runs/",
+        "/games/blue-prince/",
+        "/games/caves-of-qud/",
+        "/games/crown-trick/",
+        "/games/darkest-dungeon/",
+        "/games/fights-in-tight-spaces/",
+        "/games/flame-in-the-flood/",
+        "/games/for-the-king/",
+        "/games/into-the-breach/",
+        "/games/loop-hero/",
+        "/games/tangledeep/",
+        "/genre/tactics/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/into-the-breach/",
+      "contextualInbound": 21,
+      "linkedFrom": [
+        "/",
+        "/best/best-co-op-roguelites/",
+        "/best/best-deckbuilding-roguelikes/",
+        "/best/best-hidden-gems-under-20/",
+        "/best/best-roguelikes-for-short-sessions/",
+        "/best/best-roguelikes-on-nintendo-switch/",
+        "/best/best-roguelites-for-beginners/",
+        "/collections/under-20/",
+        "/features/offline-play/",
+        "/features/short-runs/",
+        "/games/blue-prince/",
+        "/games/caves-of-qud/",
+        "/games/crown-trick/",
+        "/games/darkest-dungeon/",
+        "/games/fights-in-tight-spaces/",
+        "/games/flame-in-the-flood/",
+        "/games/for-the-king/",
+        "/games/loop-hero/",
+        "/games/tangledeep/",
+        "/games/the-last-spell/",
+        "/genre/tactics/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/vampire-survivors/",
+      "contextualInbound": 23,
+      "linkedFrom": [
+        "/collections/under-20/",
+        "/features/local-co-op/",
+        "/features/offline-play/",
+        "/features/short-runs/",
+        "/games/absolum/",
+        "/games/astral-ascent/",
+        "/games/ball-x-pit/",
+        "/games/crypt-of-the-necrodancer/",
+        "/games/cult-of-the-lamb/",
+        "/games/dead-cells/",
+        "/games/downwell/",
+        "/games/hades-ii/",
+        "/games/hades/",
+        "/games/have-a-nice-death/",
+        "/games/moonlighter-2-the-endless-vault/",
+        "/games/moonlighter/",
+        "/games/one-step-from-eden/",
+        "/games/rogue-legacy-2/",
+        "/games/shovel-knight-dig/",
+        "/games/skul-the-hero-slayer/",
+        "/games/spelunky-2/",
+        "/games/warm-snow/",
+        "/genre/action/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/dead-cells/",
+      "contextualInbound": 28,
+      "linkedFrom": [
+        "/",
+        "/best/best-co-op-roguelites/",
+        "/best/best-deckbuilding-roguelikes/",
+        "/best/best-hidden-gems-under-20/",
+        "/best/best-roguelikes-for-short-sessions/",
+        "/best/best-roguelikes-on-nintendo-switch/",
+        "/best/best-roguelites-for-beginners/",
+        "/features/offline-play/",
+        "/features/short-runs/",
+        "/games/absolum/",
+        "/games/astral-ascent/",
+        "/games/ball-x-pit/",
+        "/games/crypt-of-the-necrodancer/",
+        "/games/cult-of-the-lamb/",
+        "/games/downwell/",
+        "/games/hades-ii/",
+        "/games/hades/",
+        "/games/have-a-nice-death/",
+        "/games/moonlighter-2-the-endless-vault/",
+        "/games/moonlighter/",
+        "/games/one-step-from-eden/",
+        "/games/rogue-legacy-2/",
+        "/games/shovel-knight-dig/",
+        "/games/skul-the-hero-slayer/",
+        "/games/spelunky-2/",
+        "/games/vampire-survivors/",
+        "/games/warm-snow/",
+        "/genre/action/"
+      ],
+      "money": false
+    },
+    {
+      "route": "/games/hades/",
+      "contextualInbound": 28,
+      "linkedFrom": [
+        "/",
+        "/best/best-co-op-roguelites/",
+        "/best/best-deckbuilding-roguelikes/",
+        "/best/best-hidden-gems-under-20/",
+        "/best/best-roguelikes-for-short-sessions/",
+        "/best/best-roguelikes-on-nintendo-switch/",
+        "/best/best-roguelites-for-beginners/",
+        "/features/offline-play/",
+        "/features/short-runs/",
+        "/games/absolum/",
+        "/games/astral-ascent/",
+        "/games/ball-x-pit/",
+        "/games/crypt-of-the-necrodancer/",
+        "/games/cult-of-the-lamb/",
+        "/games/dead-cells/",
+        "/games/downwell/",
+        "/games/hades-ii/",
+        "/games/have-a-nice-death/",
+        "/games/moonlighter-2-the-endless-vault/",
+        "/games/moonlighter/",
+        "/games/one-step-from-eden/",
+        "/games/rogue-legacy-2/",
+        "/games/shovel-knight-dig/",
+        "/games/skul-the-hero-slayer/",
+        "/games/spelunky-2/",
+        "/games/vampire-survivors/",
+        "/games/warm-snow/",
+        "/genre/action/"
+      ],
+      "money": false
+    }
+  ]
+}

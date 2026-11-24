@@ -12,7 +12,7 @@ players: "1"
 developer: "Terry Cavanagh"
 publisher: "Distractionware"
 short_description: "A dice-driven roguelike deckbuilder where each playable character bends the rules in a different way."
-image_file: "cover.jpg"
+image_file: "dicey-dungeons-nintendo-switch-eshop-cover.jpg"
 image_source: "https://www.nintendo.com/us/store/products/dicey-dungeons-switch/"
 last_verified: "2026-07-09"
 ---

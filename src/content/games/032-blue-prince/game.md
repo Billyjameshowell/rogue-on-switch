@@ -15,12 +15,10 @@ players: "1"
 developer: "Dogubomb"
 publisher: "Raw Fury"
 short_description: "Blue Prince is a puzzle adventure on Switch 2 for $29.99 where you draft the rooms of a manor that resets each day. It borrows roguelite structure but has no combat."
-image_file: "cover.webp"
+image_file: "blue-prince-nintendo-switch-2-eshop-cover.webp"
 image_source: "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_png/store/software/switch2/70010000109038/b981f7ef5d2df071e77e83bbe6ded66110931ecdb62571ad2086d5523bf4af06"
 last_verified: "2026-11-18"
 ---
-
-# Blue Prince
 
 *Blue Prince* is on Nintendo Switch 2 for $29.99 and launched there on March 3, 2026. It is not on the original Switch. As the heir to Mt. Holly, you search the manor for its hidden Room 46 by choosing which room appears behind each door you open.
 

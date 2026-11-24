@@ -14,12 +14,10 @@ players: "1"
 developer: "Freehold Games"
 publisher: "Kitfox Games"
 short_description: "Caves of Qud is a turn-based science fantasy roguelike on Switch for $29.99, with deep simulation, more than 70 factions, and a free Switch 2 upgrade announced."
-image_file: "cover.webp"
+image_file: "caves-of-qud-nintendo-switch-eshop-cover.webp"
 image_source: "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_png/store/software/switch/70010000102262/2396fa5de9da5f6741bc4d3141f2b31b7992c6cb797545c7276af193f3aab3ff"
 last_verified: "2026-11-18"
 ---
-
-# Caves of Qud
 
 *Caves of Qud* is on Nintendo Switch for $29.99 and launched there on February 16, 2026. A free Switch 2 Edition upgrade has been announced, but it had no digital release date as of November 18, 2026.
 

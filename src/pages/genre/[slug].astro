@@ -1,5 +1,39 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro'; import SiteHeader from '../../components/SiteHeader.astro'; import { games, type Playstyle } from '../../data/games';
-const names:Record<string,Playstyle>={action:'Action',cards:'Cards',tactics:'Tactics',shooter:'Shooter','co-op':'Co-op'}; export function getStaticPaths(){return ['action','cards','tactics','shooter','co-op'].map(slug=>({params:{slug}}));} const style=names[Astro.params.slug!]; const picks=games.filter(g=>g.playstyle===style);
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CrossLinks from '../../components/CrossLinks.astro';
+import GameCards from '../../components/GameCards.astro';
+import { games } from '../../data/games';
+import { directoryPlan, documentTitle, genres, plain, platformName } from '../../lib/hubs.mjs';
+
+export function getStaticPaths() {
+  return genres.map((genre) => ({ params: { slug: genre.slug } }));
+}
+
+const model = directoryPlan(games).genre(Astro.params.slug!);
+const first = model.picks[0];
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Genres', href: '/genre/action/' },
+  { name: model.h1 },
+];
 ---
-<BaseLayout title={`Best ${style} roguelikes on Nintendo Switch | Rogue On Switch`}><SiteHeader /><main class="shell"><p class="breadcrumb"><a href="/">Home</a> / Genres / {style}</p><article class="detail"><p class="kicker">Genre hub</p><h1>{style} runs on Switch</h1><p>Practical recommendations for players who know the feeling they want, even when they do not yet know the game.</p><div class="related">{picks.map(game=><a href={`/games/${game.slug}/`}><h2>{game.title}</h2><p>{game.summary}</p></a>)}</div></article></main></BaseLayout>
+<BaseLayout title={documentTitle(model.h1)} description={model.description} crumbs={crumbs}>
+  <SiteHeader />
+  <main class="shell">
+    <Breadcrumb crumbs={crumbs} />
+    <article class="detail">
+      <p class="kicker">Genre hub</p>
+      <h1>{model.h1}</h1>
+      <p>
+        {model.picks.length} {model.playstyle.toLowerCase()} games are in the directory.
+        The list opens with <a href={`/games/${first.slug}/`}>{first.title}</a>, a {first.classification.toLowerCase()} on {platformName(first)} listed at {plain(first.price)} with runs of {plain(first.runLength)}.
+      </p>
+      <h2>{model.question}</h2>
+      <p>{model.picks.length} games use the {model.playstyle.toLowerCase()} playstyle. {first.title} is the first of them in the directory.</p>
+      <CrossLinks links={model.links} />
+      <GameCards picks={model.picks} />
+    </article>
+  </main>
+</BaseLayout>

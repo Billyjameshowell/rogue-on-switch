@@ -12,7 +12,7 @@ players: "1"
 developer: "LocalThunk"
 publisher: "Playstack"
 short_description: "A poker-inspired roguelike deckbuilder about building powerful Joker combinations and scoring impossible hands."
-image_file: "cover.jpg"
+image_file: "balatro-nintendo-switch-eshop-cover.jpg"
 image_source: "https://www.nintendo.com/us/store/products/balatro-switch/"
 last_verified: "2026-07-09"
 ---

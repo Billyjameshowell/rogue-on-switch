@@ -12,7 +12,7 @@ players: "1"
 developer: "Subset Games"
 publisher: "Subset Games"
 short_description: "Command mechs on small tactical battlefields where every enemy action is telegraphed before you move."
-image_file: "cover.jpg"
+image_file: "into-the-breach-nintendo-switch-eshop-cover.jpg"
 image_source: "https://www.nintendo.com/us/store/products/into-the-breach-switch/"
 last_verified: "2026-07-09"
 ---

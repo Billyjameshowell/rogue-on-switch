@@ -1,0 +1,17 @@
+---
+const { links } = Astro.props as { links: { href: string; anchor: string }[] };
+const joiner = (index: number, length: number) => {
+  if (index === 0) return ' ';
+  if (length === 2) return ' and ';
+  if (index + 1 === length) return ', and ';
+  return ', ';
+};
+---
+<p>
+  Continue with{links.map((item, index) => (
+    <>
+      {joiner(index, links.length)}
+      <a href={item.href}>{item.anchor}</a>
+    </>
+  ))}.
+</p>

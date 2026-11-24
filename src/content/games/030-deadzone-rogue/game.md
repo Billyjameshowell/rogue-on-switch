@@ -14,12 +14,10 @@ players: "1 (2-3 online)"
 developer: "Prophecy Games"
 publisher: "Prophecy Games"
 short_description: "Deadzone: Rogue is a first-person shooter roguelite on Switch 2 for $24.99, with online co-op for three players, gyro aiming, and runs through a hostile space station."
-image_file: "cover.webp"
+image_file: "deadzone-rogue-nintendo-switch-2-eshop-cover.webp"
 image_source: "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_png/store/software/switch2/70010000104247/9b7acba2c73cba30b8e188e1ab670a8123f420b6ef8b1491978c99ba6a2ba933"
 last_verified: "2026-11-18"
 ---
-
-# Deadzone: Rogue
 
 *Deadzone: Rogue* is on Nintendo Switch 2 for $24.99 and launched there on March 17, 2026. It is not on the original Switch.
 

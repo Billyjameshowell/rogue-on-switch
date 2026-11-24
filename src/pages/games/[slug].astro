@@ -3,34 +3,114 @@ import { render } from 'astro:content';
 import { Image, getImage } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 import { games } from '../../data/games';
 import { getGameAssetsBySiteSlug, researchFacts } from '../../data/research';
+import { coverAlt, directoryPlan, documentTitle, gameH1, plain, platformName, priceNumber } from '../../lib/hubs.mjs';
 
-export function getStaticPaths() { return games.map((game) => ({ params: { slug: game.slug }, props: { game } })); }
+export function getStaticPaths() {
+  return games.map((game) => ({ params: { slug: game.slug }, props: { game } }));
+}
+
 const { game: seed } = Astro.props;
-const gameAsset = (await getGameAssetsBySiteSlug()).get(seed.slug);
+const assets = await getGameAssetsBySiteSlug();
+const gameAsset = assets.get(seed.slug);
 const research = gameAsset?.entry;
 const game = researchFacts(seed, research) ?? seed;
 const cover = gameAsset?.cover;
 const socialImage = cover ? (await getImage({ src: cover, width: 1200, format: 'jpg' })).src : undefined;
 const { Content } = research ? await render(research) : { Content: undefined };
-const related = games.filter((item) => item.playstyle === game.playstyle && item.slug !== game.slug).slice(0,3);
-const jsonLd = { '@context':'https://schema.org', '@type':'VideoGame', name:game.title, genre:game.genre, gamePlatform:game.platform, description:game.summary };
+const model = directoryPlan(games).game(seed.slug);
+const price = priceNumber(game);
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Games', href: '/games/' },
+  { name: game.title },
+];
+const h1 = gameH1(game);
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name: game.title,
+  genre: game.genre,
+  gamePlatform: platformName(game),
+  description: plain(game.summary),
+  ...(price !== null
+    ? { offers: { '@type': 'Offer', priceCurrency: 'USD', price: price.toFixed(2), url: game.sourceUrl } }
+    : {}),
+};
 ---
-<BaseLayout title={`${game.title} on Nintendo Switch | Rogue On Switch`} description={game.summary} image={socialImage}>
+<BaseLayout title={documentTitle(h1)} description={plain(game.summary)} image={socialImage} crumbs={crumbs}>
   <SiteHeader />
-  <main class="shell"><p class="breadcrumb"><a href="/">Home</a> / <a href="/games/">Games</a> / {game.title}</p>
+  <main class="shell">
+    <Breadcrumb crumbs={crumbs} />
     <article class="detail">
       <div class:list={['game-detail-hero', { 'has-cover': Boolean(cover) }]}>
-        <div><p class="kicker">{game.classification} · {game.playstyle}</p><h1>{game.title}</h1><p>{game.summary}</p></div>
-        {cover && <Image src={cover} widths={[480, 960]} sizes="(max-width: 760px) 100vw, 40vw" alt={`${game.title} cover art`} loading="eager" fetchpriority="high" />}
+        <div>
+          <p class="kicker">{game.classification} · {game.playstyle}</p>
+          <h1>{game.title}<span class="on-platform"> on {platformName(game)}</span></h1>
+          <p>{plain(game.summary)}</p>
+          <p>
+            This page is filed under <a href={model.inline[0].href}>{model.inline[0].anchor}</a>
+            {model.inline[1] && <> and <a href={model.inline[1].href}>{model.inline[1].anchor}</a></>}.
+          </p>
+        </div>
+        {cover && (
+          <Image
+            src={cover}
+            widths={[480, 960]}
+            sizes="(max-width: 760px) 100vw, 40vw"
+            alt={coverAlt(game)}
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+        )}
       </div>
-      <div class="facts"><div><b>Typical run</b>{game.runLength}</div><div><b>Regular US price</b>{game.price}</div><div><b>Co-op</b>{game.coOp}</div>{research && <><div><b>Nintendo release</b>{research.data.release_date}</div><div><b>Players</b>{research.data.players}</div><div><b>Developer</b>{research.data.developer}</div></>}</div>
-      {research && <section class="research-overview"><h2>Overview</h2><Content /></section>}
-      <h2>Is it right for you?</h2><p><strong>Best for:</strong> {game.bestFor}</p><p><strong>Skip if:</strong> {game.skipIf}</p>
-      <h2>What carries between runs</h2><p>{game.progression}</p><h2>On {game.platform === 'Nintendo Switch 2' ? 'Switch 2' : 'Switch'}</h2><p>{game.switchNotes}</p>
-      {research ? <p>Research checked {research.data.last_verified} · <a href={research.data.official_website}>Official site</a> · <a href={research.data.nintendo_switch_url}>Nintendo listing</a> · <a href={research.data.image_source}>Cover source</a></p> : <p>Source: <a href={game.sourceUrl}>Nintendo eShop</a> · Last checked {game.lastChecked}</p>}
-      <h2>Try next</h2><div class="related">{related.map(item => <a href={`/games/${item.slug}/`}><b>{item.title}</b><p>{item.playstyle} · {item.runLength}</p></a>)}</div>
+      <aside class="guide-callout">
+        <p>{model.callout.body}</p>
+        <a href={model.callout.href}>{model.callout.anchor}</a>
+      </aside>
+      <div class="facts">
+        <div><b>Typical run</b>{plain(game.runLength)}</div>
+        <div><b>Regular US price</b>{plain(game.price)}</div>
+        <div><b>Co-op</b>{plain(game.coOp)}</div>
+        {research && (
+          <>
+            <div><b>Nintendo release</b>{research.data.release_date}</div>
+            <div><b>Players</b>{plain(research.data.players)}</div>
+            <div><b>Developer</b>{research.data.developer}</div>
+          </>
+        )}
+      </div>
+      {research && (
+        <section class="research-overview">
+          <h2>What is {game.title}?</h2>
+          <Content />
+        </section>
+      )}
+      <h2>Is {game.title} right for you?</h2>
+      <p><strong>Best for:</strong> {plain(game.bestFor)}</p>
+      <p><strong>Skip if:</strong> {plain(game.skipIf)}</p>
+      <h2>What carries between runs?</h2>
+      <p>{plain(game.progression)}</p>
+      <h2>How does it play on {platformName(game)}?</h2>
+      <p>{plain(game.switchNotes)}</p>
+      {research ? (
+        <p>Research checked {research.data.last_verified} · <a href={research.data.official_website}>Official site</a> · <a href={research.data.nintendo_switch_url}>Nintendo listing</a> · <a href={research.data.image_source}>Cover source</a></p>
+      ) : (
+        <p>Source: <a href={game.sourceUrl}>Nintendo eShop</a> · Last checked {game.lastChecked}</p>
+      )}
+      <h2>Similar games on Nintendo Switch</h2>
+      <div class="related">
+        {model.related.map((item) => (
+          <article>
+            <h3><a href={`/games/${item.slug}/`}>{item.title}</a></h3>
+            <p>{item.playstyle} | {plain(item.runLength)}</p>
+          </article>
+        ))}
+      </div>
     </article>
-  </main><script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </main>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 </BaseLayout>

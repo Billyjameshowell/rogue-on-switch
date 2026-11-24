@@ -16,12 +16,10 @@ players: "1-2 local co-op"
 developer: "Dodge Roll"
 publisher: "Devolver Digital"
 short_description: "A bullet-hell dungeon crawler about shooting, looting, and dodge-rolling through a procedurally arranged fortress in search of a gun that can kill the past."
-image_file: "cover.jpg"
+image_file: "enter-the-gungeon-nintendo-switch-eshop-cover.jpg"
 image_source: "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000002862/9b272d28f76ef9ade4d919f670f56eb73836d42a76daa1a9a342c962c9dfd377"
 last_verified: "2026-07-09"
 ---
-
-# Enter the Gungeon
 
 *Enter the Gungeon* is a bullet-hell roguelite from Dodge Roll. Players choose a Gungeoneer, fight through a mix of hand-designed rooms and procedural layouts, collect unusual guns and items, and can bring a second player into local co-op.
 
@@ -30,5 +28,5 @@ Nintendo lists the Switch release date as December 14, 2017 and a regular U.S. p
 ## Sources
 
 - [Enter the Gungeon official website](https://enterthegungeon.com/)
-- [Nintendo U.S. — Enter the Gungeon](https://www.nintendo.com/us/store/products/enter-the-gungeon-switch/)
+- [Nintendo U.S.: Enter the Gungeon](https://www.nintendo.com/us/store/products/enter-the-gungeon-switch/)
 - [Nintendo image asset](https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/store/software/switch/70010000002862/9b272d28f76ef9ade4d919f670f56eb73836d42a76daa1a9a342c962c9dfd377)

@@ -1,7 +1,53 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro'; import SiteHeader from '../../components/SiteHeader.astro'; import { games, guideTopics } from '../../data/games';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CrossLinks from '../../components/CrossLinks.astro';
+import GameCards from '../../components/GameCards.astro';
+import { games } from '../../data/games';
+import { directoryPlan, documentTitle, guides, plain, platformName } from '../../lib/hubs.mjs';
 import { siteOrigin } from '../../lib/site';
-export function getStaticPaths(){return guideTopics.map(([topic,title,description])=>({params:{topic},props:{title,description}}));} const {title,description}=Astro.props;
-const picks=games.slice(0,6); const jsonLd={'@context':'https://schema.org','@type':'ItemList',name:title,itemListElement:picks.map((game,position)=>({ '@type':'ListItem',position,name:game.title,url:`${siteOrigin}/games/${game.slug}/`}))};
+
+export function getStaticPaths() {
+  return guides.map((guide) => ({ params: { topic: guide.slug } }));
+}
+
+const topic = Astro.params.topic!;
+const model = directoryPlan(games).guide(topic);
+const first = model.picks[0];
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Best', href: '/best/best-roguelikes-on-nintendo-switch/' },
+  { name: model.h1 },
+];
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: model.h1,
+  itemListElement: model.picks.map((game, position) => ({
+    '@type': 'ListItem',
+    position: position + 1,
+    name: game.title,
+    url: `${siteOrigin}/games/${game.slug}/`,
+  })),
+};
 ---
-<BaseLayout title={`${title} | Rogue On Switch`} description={description}><SiteHeader /><main class="shell"><p class="breadcrumb"><a href="/">Home</a> / Best / {title}</p><article class="detail"><p class="kicker">Editorial guide</p><h1>{title}</h1><p>{description} Each recommendation reflects run length, learning curve, Switch feel, and who will actually enjoy it.</p><div class="related">{picks.map((game,i)=><a href={`/games/${game.slug}/`}><p class="kicker">{String(i+1).padStart(2,'0')}</p><h2>{game.title}</h2><p>{game.bestFor}</p></a>)}</div></article></main><script type="application/ld+json" set:html={JSON.stringify(jsonLd)} /></BaseLayout>
+<BaseLayout title={documentTitle(model.h1)} description={model.description} crumbs={crumbs}>
+  <SiteHeader />
+  <main class="shell">
+    <Breadcrumb crumbs={crumbs} />
+    <article class="detail">
+      <p class="kicker">Editorial guide</p>
+      <h1>{model.h1}</h1>
+      <p>
+        {model.picks.length} games are on this list.
+        It opens with <a href={`/games/${first.slug}/`}>{first.title}</a>, a {first.classification.toLowerCase()} on {platformName(first)} listed at {plain(first.price)} with runs of {plain(first.runLength)}.
+      </p>
+      <h2>{model.question}</h2>
+      <p>{model.answer(first)}</p>
+      <CrossLinks links={model.links} />
+      <GameCards picks={model.picks} />
+    </article>
+  </main>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+</BaseLayout>

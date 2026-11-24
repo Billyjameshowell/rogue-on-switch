@@ -1,5 +1,6 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import type { ImageMetadata } from 'astro';
+import { coverFileName } from '../lib/hubs.mjs';
 import { games, type Game } from './games';
 
 export type ResearchGame = CollectionEntry<'games'>;
@@ -7,12 +8,12 @@ export type ResearchGame = CollectionEntry<'games'>;
 // games without a package use src/assets/covers/{site-slug}.webp. All are Nintendo US eShop art.
 export type GameAsset = { entry?: ResearchGame; cover?: ImageMetadata };
 
-const packageCovers = import.meta.glob('../content/games/**/cover.{jpg,jpeg,png,webp}', {
+const packageCovers = import.meta.glob('../content/games/**/*-eshop-cover.{jpg,jpeg,png,webp}', {
   eager: true,
   import: 'default',
 }) as Record<string, ImageMetadata>;
 
-const directoryCovers = import.meta.glob('../assets/covers/*.webp', {
+const directoryCovers = import.meta.glob('../assets/covers/*-eshop-cover.webp', {
   eager: true,
   import: 'default',
 }) as Record<string, ImageMetadata>;
@@ -39,8 +40,8 @@ export async function getGameAssetsBySiteSlug() {
     games.map((game) => {
       const entry = researchBySiteSlug.get(game.slug);
       const cover = entry
-        ? Object.entries(packageCovers).find(([path]) => path.includes(`/${entry.data.id}-`))?.[1]
-        : directoryCovers[`../assets/covers/${game.slug}.webp`];
+        ? Object.entries(packageCovers).find(([path]) => path.endsWith(`/${entry.data.image_file}`))?.[1]
+        : directoryCovers[`../assets/covers/${coverFileName(game.slug, game.platform, 'webp')}`];
       return [game.slug, { entry, cover }];
     }),
   );

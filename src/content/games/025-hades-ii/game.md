@@ -15,12 +15,10 @@ players: "1"
 developer: "Supergiant Games"
 publisher: "Supergiant Games"
 short_description: "Hades II is Supergiant's sequel to Hades, out on Switch and Switch 2 for $29.99. Melinoë fights the Titan of Time across the Underworld and the surface."
-image_file: "cover.webp"
+image_file: "hades-ii-nintendo-switch-eshop-cover.webp"
 image_source: "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_png/store/software/switch/70010000060675/a9a30b2adb707f5922eb2a845f821c99516a69e023751491b10584ac1352462f"
 last_verified: "2026-11-18"
 ---
-
-# Hades II
 
 *Hades II* is on Nintendo Switch and Switch 2 for $29.99, and it launched on both on September 25, 2025. The Switch version runs at 60fps and 720p, the Switch 2 Edition runs at 120fps and 1080p in TV mode, and owners of the Switch version get the Switch 2 upgrade for free.
 
