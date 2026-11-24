@@ -4,8 +4,6 @@ name: "Rogue Legacy 2"
 slug: "rogue-legacy-2"
 official_website: "https://www.roguelegacy2.com/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/rogue-legacy-2-switch/"
-release_date: "November 9, 2022"
-release_date_iso: "2022-11-09"
 price_usd: 24.99
 genres:
   - "action platformer"

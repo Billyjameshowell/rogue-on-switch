@@ -4,8 +4,6 @@ name: "Slay the Spire"
 slug: "slay-the-spire"
 official_website: "https://www.megacrit.com/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/slay-the-spire-switch/"
-release_date: "June 6, 2019"
-release_date_iso: "2019-06-06"
 price_usd: 24.99
 genres: ["roguelike", "deckbuilder", "strategy"]
 players: "1"

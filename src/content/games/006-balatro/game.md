@@ -4,8 +4,6 @@ name: "Balatro"
 slug: "balatro"
 official_website: "https://www.playbalatro.com/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/balatro-switch/"
-release_date: "February 20, 2024"
-release_date_iso: "2024-02-20"
 price_usd: 14.99
 genres: ["roguelike", "deckbuilder", "poker-inspired", "strategy"]
 players: "1"

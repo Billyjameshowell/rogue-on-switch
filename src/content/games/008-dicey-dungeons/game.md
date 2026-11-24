@@ -4,8 +4,6 @@ name: "Dicey Dungeons"
 slug: "dicey-dungeons"
 official_website: "https://diceydungeons.com/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/dicey-dungeons-switch/"
-release_date: "December 15, 2020"
-release_date_iso: "2020-12-15"
 price_usd: 14.99
 genres: ["roguelike", "deckbuilder", "dice", "strategy"]
 players: "1"

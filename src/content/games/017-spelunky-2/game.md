@@ -4,8 +4,6 @@ name: "Spelunky 2"
 slug: "spelunky-2"
 official_website: "https://www.spelunkyworld.com/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/spelunky-2-switch/"
-release_date: "August 26, 2021"
-release_date_iso: "2021-08-26"
 price_usd: 19.99
 genres:
   - "Roguelike"

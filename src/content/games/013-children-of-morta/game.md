@@ -4,8 +4,6 @@ name: "Children of Morta"
 slug: "children-of-morta"
 official_website: "https://childrenofmorta.com/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/children-of-morta-switch/"
-release_date: "November 20, 2019"
-release_date_iso: "2019-11-20"
 price_usd: 21.99
 genres:
   - "Roguelite"

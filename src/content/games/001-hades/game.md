@@ -4,8 +4,6 @@ name: "Hades"
 slug: "hades"
 official_website: "https://www.supergiantgames.com/games/hades/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/hades-switch/"
-release_date: "September 17, 2020"
-release_date_iso: "2020-09-17"
 price_usd: 24.99
 genres:
   - "Roguelite"

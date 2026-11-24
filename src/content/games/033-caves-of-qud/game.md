@@ -4,8 +4,6 @@ name: "Caves of Qud"
 slug: "caves-of-qud"
 official_website: "https://www.cavesofqud.com/"
 nintendo_switch_url: "https://www.nintendo.com/us/store/products/caves-of-qud-switch/"
-release_date: "February 16, 2026"
-release_date_iso: "2026-02-16"
 price_usd: 29.99
 genres:
   - "Roguelike"
