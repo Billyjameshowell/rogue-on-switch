@@ -5,11 +5,17 @@ import PixelBadge from './PixelBadge.astro';
 import { formatReleaseDate, playstyleColor } from '../data/games';
 import { genreLine, getDirectory } from '../data/directory';
 
-type Props = { showRelease?: boolean };
-const { showRelease = false } = Astro.props;
+type Props = { showRelease?: boolean; contained?: boolean };
+const { showRelease = false, contained = false } = Astro.props;
 const directory = await getDirectory();
 ---
-<div class="table-scroll" role="region" aria-label="Games table. Scroll sideways for more columns." tabindex="0">
+<div
+  class:list={['table-scroll', { 'is-contained': contained }]}
+  style={contained ? '--visible-rows: 5' : undefined}
+  role="region"
+  aria-label={contained ? 'Browse games. Scroll inside the table for more games, and sideways for more columns.' : 'Games table. Scroll sideways for more columns.'}
+  tabindex="0"
+>
   <table class="game-table">
     <thead><tr><th scope="col">Game</th><th scope="col">Console</th>{showRelease && <th scope="col">Released</th>}<th scope="col">Run length</th><th scope="col">Price (USD)</th><th scope="col">Genre</th><th scope="col">Playstyle</th><th scope="col">Co-op</th></tr></thead>
     <tbody>{directory.map((game) => (
@@ -23,4 +29,23 @@ const directory = await getDirectory();
     ))}</tbody>
   </table>
 </div>
-<p class="table-note">Every Switch game here also plays on Switch 2. A Switch 2 logo marks a Switch 2 game or a Switch 2 Edition.</p>
+<p class="table-note">{contained && 'Scroll the table for the full list. '}Every Switch game here also plays on Switch 2. A Switch 2 logo marks a Switch 2 game or a Switch 2 Edition.</p>
+{contained && <script>
+  for (const el of document.querySelectorAll<HTMLElement>('.table-scroll.is-contained')) {
+    el.addEventListener('keydown', (event) => {
+      if (event.target !== el) return;
+      const line = Number.parseFloat(getComputedStyle(el).getPropertyValue('--table-row')) || 43;
+      const page = el.clientHeight - (Number.parseFloat(getComputedStyle(el).getPropertyValue('--table-head')) || 0);
+      const distance = event.key === 'ArrowDown' ? line
+        : event.key === 'ArrowUp' ? -line
+        : event.key === 'PageDown' ? page
+        : event.key === 'PageUp' ? -page
+        : event.key === 'Home' ? -el.scrollHeight
+        : event.key === 'End' ? el.scrollHeight
+        : 0;
+      if (!distance) return;
+      event.preventDefault();
+      el.scrollBy({ top: distance });
+    });
+  }
+</script>}

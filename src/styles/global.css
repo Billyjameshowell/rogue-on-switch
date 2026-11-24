@@ -100,6 +100,13 @@ ul,ol{margin:0;padding:0;list-style:none}
 .console-logos{display:inline-flex;gap:6px;color:var(--paper)}
 .console-logo{display:inline-flex;align-items:center;gap:2px;color:#e60012}
 .console-logo b{font:700 11px var(--font-pixel);color:var(--paper)}
+/* Home browse table keeps five rows visible. The rest of the games scroll inside it. Column headers stick; row headers do not. */
+.table-scroll.is-contained{--table-head:27px;--table-row:43px;max-height:calc(var(--table-head) + var(--table-row) * var(--visible-rows, 5) + 12px);overflow:auto;scroll-padding-top:var(--table-head);scrollbar-width:thin;scrollbar-color:var(--amber) #1c1d1a;background:linear-gradient(#131411 30%,rgba(19,20,17,0)) center top/100% 24px no-repeat local,linear-gradient(rgba(19,20,17,0),#131411 70%) center bottom/100% 32px no-repeat local,linear-gradient(90deg,#131411 30%,rgba(19,20,17,0)) left center/40px 100% no-repeat local,linear-gradient(270deg,#131411 30%,rgba(19,20,17,0)) right center/40px 100% no-repeat local,radial-gradient(farthest-side at 50% 0,rgba(243,169,29,.45),transparent) center top/100% 14px no-repeat scroll,radial-gradient(farthest-side at 50% 100%,rgba(243,169,29,.7),transparent) center bottom/100% 16px no-repeat scroll,radial-gradient(farthest-side at 0 50%,rgba(243,169,29,.6),transparent) left center/20px 100% no-repeat scroll,radial-gradient(farthest-side at 100% 50%,rgba(243,169,29,.6),transparent) right center/20px 100% no-repeat scroll}
+.table-scroll.is-contained::-webkit-scrollbar{width:10px;height:10px}
+.table-scroll.is-contained::-webkit-scrollbar-thumb{background:var(--amber)}
+.table-scroll.is-contained::-webkit-scrollbar-track{background:#1c1d1a}
+.table-scroll.is-contained .game-table{border-collapse:separate;border-spacing:0}
+.table-scroll.is-contained .game-table thead th{position:sticky;top:0;z-index:2;background:#131411;box-shadow:0 1px 0 var(--line-subtle)}
 
 
 /* Content pages. */
