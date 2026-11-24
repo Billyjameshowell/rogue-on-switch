@@ -1,0 +1,12 @@
+---
+export type Crumb = { name: string; href?: string };
+const { crumbs } = Astro.props as { crumbs: Crumb[] };
+---
+<p class="breadcrumb">
+  {crumbs.map((crumb, index) => (
+    <>
+      {index > 0 && ' / '}
+      {crumb.href ? <a href={crumb.href}>{crumb.name}</a> : crumb.name}
+    </>
+  ))}
+</p>

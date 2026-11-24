@@ -15,12 +15,10 @@ players: "1-3 on one system, depending on the game"
 developer: "Mossmouth"
 publisher: "Mossmouth"
 short_description: "UFO 50 is one $24.99 Switch game with 50 retro games inside, and its deckbuilder Party House is one of the best roguelikes we have played lately."
-image_file: "cover.webp"
+image_file: "ufo-50-nintendo-switch-eshop-cover.webp"
 image_source: "https://assets.nintendo.com/image/upload/c_fill,w_1200,h_675/q_auto:best/f_png/store/software/switch/70010000098422/a114057ff62030c85cdfab5fd3384e6913bd716f44164f147d95100a29efd872"
 last_verified: "2026-11-18"
 ---
-
-# UFO 50
 
 *UFO 50* is one Nintendo Switch game with 50 games inside it. It costs $24.99 on the eShop and launched on Switch on August 7, 2025. We recommend it mainly for *Party House*, a deckbuilding roguelike in the collection that we rank among the best we have played lately.
 

@@ -15,12 +15,10 @@ players: "1-4"
 developer: "Turning Wheel LLC"
 publisher: "Turning Wheel"
 short_description: "Barony is a $19.99 first-person roguelike on Switch for up to four players. It is chaotic, brutal, and funny in co-op, with a steep learning curve."
-image_file: "cover.webp"
+image_file: "barony-nintendo-switch-eshop-cover.webp"
 image_source: "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_png/store/software/switch/70010000059441/935ce570092b09f8020b5a379c9614b0cf8d1998d9ab114ecf4ac1e57f3258ee"
 last_verified: "2026-11-18"
 ---
-
-# Barony
 
 *Barony* is on Nintendo Switch for $19.99 and launched there on August 1, 2023. It is a first-person permadeath dungeon crawler for one to four players, and in co-op it is one of the most chaotic and funny games we have played on the console.
 

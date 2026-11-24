@@ -1,4 +1,39 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro'; import SiteHeader from '../../components/SiteHeader.astro'; import { games } from '../../data/games'; export function getStaticPaths(){return ['local-co-op','short-runs','offline-play'].map(slug=>({params:{slug}}));} const slug=Astro.params.slug!; const title=slug==='local-co-op'?'Best local co-op roguelites':slug==='short-runs'?'Roguelikes for short sessions':'Offline roguelikes for Switch'; const picks=slug==='local-co-op'?games.filter(g=>g.coOp==='Local'):games.slice(0,9);
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CrossLinks from '../../components/CrossLinks.astro';
+import GameCards from '../../components/GameCards.astro';
+import { games } from '../../data/games';
+import { directoryPlan, documentTitle, features, plain, platformName } from '../../lib/hubs.mjs';
+
+export function getStaticPaths() {
+  return features.map((feature) => ({ params: { slug: feature.slug } }));
+}
+
+const model = directoryPlan(games).feature(Astro.params.slug!);
+const first = model.picks[0];
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Features', href: '/features/local-co-op/' },
+  { name: model.h1 },
+];
 ---
-<BaseLayout title={`${title} | Rogue On Switch`}><SiteHeader /><main class="shell"><p class="breadcrumb"><a href="/">Home</a> / Features / {title}</p><article class="detail"><p class="kicker">Find by need</p><h1>{title}</h1><div class="related">{picks.map(game=><a href={`/games/${game.slug}/`}><h2>{game.title}</h2><p>{game.bestFor}</p></a>)}</div></article></main></BaseLayout>
+<BaseLayout title={documentTitle(model.h1)} description={model.description} crumbs={crumbs}>
+  <SiteHeader />
+  <main class="shell">
+    <Breadcrumb crumbs={crumbs} />
+    <article class="detail">
+      <p class="kicker">Find by need</p>
+      <h1>{model.h1}</h1>
+      <p>
+        {model.picks.length} games match this filter.
+        The list opens with <a href={`/games/${first.slug}/`}>{first.title}</a>, a {first.classification.toLowerCase()} on {platformName(first)} listed at {plain(first.price)} with runs of {plain(first.runLength)}.
+      </p>
+      <h2>{model.question}</h2>
+      <p>{first.title} is first in this set of {model.picks.length}. The co-op field says {plain(first.coOp)}, and a listed run is {plain(first.runLength)}.</p>
+      <CrossLinks links={model.links} />
+      <GameCards picks={model.picks} />
+    </article>
+  </main>
+</BaseLayout>

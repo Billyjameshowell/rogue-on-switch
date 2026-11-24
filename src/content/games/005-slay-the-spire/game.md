@@ -12,7 +12,7 @@ players: "1"
 developer: "Mega Crit"
 publisher: "Mega Crit"
 short_description: "Build a deck from hundreds of cards and relics as you climb a constantly changing spire."
-image_file: "cover.jpg"
+image_file: "slay-the-spire-nintendo-switch-eshop-cover.jpg"
 image_source: "https://www.nintendo.com/us/store/products/slay-the-spire-switch/"
 last_verified: "2026-07-09"
 ---

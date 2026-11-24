@@ -15,12 +15,10 @@ players: "1-3 on one Switch (one controller) or online"
 developer: "IronOak Games"
 publisher: "Curve Digital"
 short_description: "For The King is a $24.99 turn-based tabletop roguelite on Switch, with procedural maps and co-op for up to three players on one console or online."
-image_file: "cover.webp"
+image_file: "for-the-king-nintendo-switch-eshop-cover.webp"
 image_source: "https://assets.nintendo.com/image/upload/c_fill,w_1200,h_675/q_auto:best/f_png/store/software/switch/70010000011401/d8f814bcec11e98366f4c04b22091016c4dd7dde8e7e61eb8b2d5a695e3a7541"
 last_verified: "2026-11-18"
 ---
-
-# For The King
 
 Yes, *For The King* is on Nintendo Switch. The $24.99 eShop version from IronOak Games and Curve Digital launched on May 9, 2019, and supports one to three players on one Switch or online. It blends tabletop board game movement with turn-based combat and roguelike risk.
 

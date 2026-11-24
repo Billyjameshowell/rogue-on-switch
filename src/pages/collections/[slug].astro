@@ -1,4 +1,39 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro'; import SiteHeader from '../../components/SiteHeader.astro'; import { games } from '../../data/games'; export function getStaticPaths(){return ['hidden-gems','under-20'].map(slug=>({params:{slug}}));} const slug=Astro.params.slug!; const title=slug==='hidden-gems'?'Hidden gems worth your next run':'The best roguelikes under $20'; const picks=slug==='under-20'?games.filter(g=>Number(g.price.replace(/[^0-9.]/g,''))<20):games.slice(10,20);
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CrossLinks from '../../components/CrossLinks.astro';
+import GameCards from '../../components/GameCards.astro';
+import { games } from '../../data/games';
+import { collections, directoryPlan, documentTitle, plain, platformName } from '../../lib/hubs.mjs';
+
+export function getStaticPaths() {
+  return collections.map((collection) => ({ params: { slug: collection.slug } }));
+}
+
+const model = directoryPlan(games).collection(Astro.params.slug!);
+const first = model.picks[0];
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Collections', href: '/collections/hidden-gems/' },
+  { name: model.h1 },
+];
 ---
-<BaseLayout title={`${title} | Rogue On Switch`}><SiteHeader /><main class="shell"><p class="breadcrumb"><a href="/">Home</a> / Collections / {title}</p><article class="detail"><p class="kicker">Curated collection</p><h1>{title}</h1><div class="related">{picks.map(game=><a href={`/games/${game.slug}/`}><h2>{game.title}</h2><p>{game.summary}</p></a>)}</div></article></main></BaseLayout>
+<BaseLayout title={documentTitle(model.h1)} description={model.description} crumbs={crumbs}>
+  <SiteHeader />
+  <main class="shell">
+    <Breadcrumb crumbs={crumbs} />
+    <article class="detail">
+      <p class="kicker">Curated collection</p>
+      <h1>{model.h1}</h1>
+      <p>
+        {model.picks.length} games match this price filter.
+        The list opens with <a href={`/games/${first.slug}/`}>{first.title}</a> at {plain(first.price)}, with runs of {plain(first.runLength)} on {platformName(first)}.
+      </p>
+      <h2>{model.question}</h2>
+      <p>{first.title} is the lowest regular US price in this set, at {plain(first.price)}.</p>
+      <CrossLinks links={model.links} />
+      <GameCards picks={model.picks} />
+    </article>
+  </main>
+</BaseLayout>

@@ -1,7 +1,29 @@
 ---
-const { title, description = 'Find your next great run on Nintendo Switch.', image } = Astro.props;
+const {
+  title,
+  description = 'Roguelikes and roguelites on Nintendo Switch, with run length, price, and co-op.',
+  image,
+  crumbs = [],
+} = Astro.props as {
+  title: string;
+  description?: string;
+  image?: string;
+  crumbs?: { name: string; href?: string }[];
+};
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const socialImage = image ? new URL(image, Astro.site) : undefined;
+const breadcrumbLd = crumbs.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: crumbs.map((crumb, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: crumb.name,
+        ...(crumb.href ? { item: new URL(crumb.href, Astro.site).href } : {}),
+      })),
+    }
+  : null;
 ---
 <!doctype html><html lang="en"><head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width" />
@@ -10,4 +32,5 @@ const socialImage = image ? new URL(image, Astro.site) : undefined;
   {socialImage && <><meta property="og:image" content={socialImage} /><meta name="twitter:image" content={socialImage} /></>}
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="/favicon.svg" />
+  {breadcrumbLd && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />}
 </head><body><slot /><style is:global>@import '../styles/global.css';</style></body></html>

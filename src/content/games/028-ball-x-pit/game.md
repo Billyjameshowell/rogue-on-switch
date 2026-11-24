@@ -15,12 +15,10 @@ players: "1"
 developer: "Kenny Sun"
 publisher: "Devolver Digital"
 short_description: "BALL x PIT is a $14.99 brick-breaking roguelite on Switch with a superb soundtrack, short runs, and a town-building loop that gets hard to put down."
-image_file: "cover.webp"
+image_file: "ball-x-pit-nintendo-switch-eshop-cover.webp"
 image_source: "https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_png/store/software/switch/70010000093189/f06affd143f29daacce06d9a77cf82b1a18a9a8dcbf1625074f7662743060c44"
 last_verified: "2026-11-18"
 ---
-
-# BALL x PIT
 
 *BALL x PIT* is on Nintendo Switch for $14.99. It launched on October 15, 2025, and the Switch 2 Edition arrived as a free upgrade on October 28, 2025 with a higher resolution and frame rate. We think it is great, easygoing fun: you fire balls at striking monsters and keep earning bigger, better balls.
 

@@ -1,23 +1,17 @@
 import type { APIRoute } from 'astro';
-import { games, guideTopics } from '../data/games';
+import { games } from '../data/games';
+import { collections, features, genres, guides } from '../lib/hubs.mjs';
 import { siteOrigin } from '../lib/site';
 
 export const GET: APIRoute = () => {
   const urls = [
     '',
     'games/',
-    ...games.map((g) => `games/${g.slug}/`),
-    ...guideTopics.map(([slug]) => `best/${slug}/`),
-    'genre/action/',
-    'genre/cards/',
-    'genre/tactics/',
-    'genre/shooter/',
-    'genre/co-op/',
-    'features/local-co-op/',
-    'features/short-runs/',
-    'features/offline-play/',
-    'collections/hidden-gems/',
-    'collections/under-20/',
+    ...games.map((game) => `games/${game.slug}/`),
+    ...guides.map((guide) => `best/${guide.slug}/`),
+    ...genres.map((genre) => `genre/${genre.slug}/`),
+    ...features.map((feature) => `features/${feature.slug}/`),
+    ...collections.map((collection) => `collections/${collection.slug}/`),
   ];
   const body = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls
     .map((path) => `<url><loc>${siteOrigin}/${path}</loc></url>`)

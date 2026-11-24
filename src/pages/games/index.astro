@@ -1,6 +1,51 @@
 ---
 import { Image } from 'astro:assets';
-import BaseLayout from '../../layouts/BaseLayout.astro'; import SiteHeader from '../../components/SiteHeader.astro'; import { games } from '../../data/games'; import { getGameAssetsBySiteSlug, researchFacts } from '../../data/research';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { games } from '../../data/games';
+import { getGameAssetsBySiteSlug, researchFacts } from '../../data/research';
+import { documentTitle, plain } from '../../lib/hubs.mjs';
+
 const gameAssets = await getGameAssetsBySiteSlug();
+const crumbs = [
+  { name: 'Home', href: '/' },
+  { name: 'Games' },
+];
+const description = `All ${games.length} roguelikes, roguelites, and run-based hybrids on Nintendo Switch, with run length, US price, and co-op.`;
 ---
-<BaseLayout title="All roguelikes on Nintendo Switch | Rogue On Switch"><SiteHeader /><main class="shell"><p class="breadcrumb"><a href="/">Home</a> / Games</p><section class="detail"><p class="kicker">The directory</p><h1>Every run starts somewhere.</h1><p>Browse our launch directory of Switch roguelikes, roguelites, and clearly labelled run-based hybrids.</p></section><table class="game-table"><thead><tr><th>Game</th><th>Run length</th><th>Price</th><th>Genre</th><th>Playstyle</th><th>Co-op</th></tr></thead><tbody>{games.map(seed => { const asset = gameAssets.get(seed.slug); const game = researchFacts(seed, asset?.entry) ?? seed; return <tr><td><a class="game-cell" href={`/games/${game.slug}/`}>{asset?.cover && <Image class="game-thumbnail" src={asset.cover} width={104} height={60} alt="" />}<span>{game.title}</span></a></td><td>{game.runLength}</td><td>{game.price}</td><td>{game.genre}</td><td>{game.playstyle}</td><td>{game.coOp}</td></tr>})}</tbody></table></main></BaseLayout>
+<BaseLayout title={documentTitle('All roguelikes on Nintendo Switch')} description={description} crumbs={crumbs}>
+  <SiteHeader />
+  <main class="shell">
+    <Breadcrumb crumbs={crumbs} />
+    <section class="detail">
+      <p class="kicker">The directory</p>
+      <h1>All roguelikes on Nintendo Switch</h1>
+      <p>This is the full directory: {games.length} roguelikes, roguelites, and run-based hybrids. Each row shows the run length, regular US price, and co-op note from the same record as the game page.</p>
+      <table class="game-table">
+        <thead><tr><th>Game</th><th>Run length</th><th>Price</th><th>Genre</th><th>Playstyle</th><th>Co-op</th></tr></thead>
+        <tbody>
+          {games.map((seed) => {
+            const asset = gameAssets.get(seed.slug);
+            const game = researchFacts(seed, asset?.entry) ?? seed;
+            return (
+              <tr>
+                <td>
+                  <a class="game-cell" href={`/games/${game.slug}/`}>
+                    {asset?.cover && <Image class="game-thumbnail" src={asset.cover} width={104} height={60} alt="" loading="lazy" decoding="async" />}
+                    <span>{game.title}</span>
+                  </a>
+                </td>
+                <td>{plain(game.runLength)}</td>
+                <td>{plain(game.price)}</td>
+                <td>{plain(game.genre)}</td>
+                <td>{game.playstyle}</td>
+                <td>{plain(game.coOp)}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </section>
+  </main>
+</BaseLayout>

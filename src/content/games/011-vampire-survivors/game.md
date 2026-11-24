@@ -11,23 +11,21 @@ genres:
   - "survival"
   - "bullet heaven"
   - "action roguelite"
-players: "1–4 players on one system or online"
+players: "1-4 players on one system or online"
 developer: "poncle"
 publisher: "poncle"
 short_description: "A minimalist time-survival roguelite where escalating monster swarms meet automatically firing weapons, run-based upgrades, and permanent upgrades."
-image_file: "cover.jpg"
+image_file: "vampire-survivors-nintendo-switch-eshop-cover.jpg"
 image_source: "https://www.nintendo.com/us/store/products/vampire-survivors-switch/"
 last_verified: "2026-07-09"
 ---
-
-# Vampire Survivors
 
 Survive growing supernatural hordes until dawn by collecting weapons and upgrades that can rapidly snowball a build. The Switch edition supports both couch and online co-op for up to four players. For the same loop with a brick-breaker twist, try [BALL x PIT, a $14.99 Switch roguelite](/games/ball-x-pit/).
 
 ## Sources
 
-- [Nintendo eShop listing](https://www.nintendo.com/us/store/products/vampire-survivors-switch/) — Switch release date, players, developer, publisher, and description.
-- [Nintendo launch announcement](https://www.nintendo.com/us/whatsnew/indie-hit-vampire-survivors-available-now-on-nintendo-switch/) — standard $4.99 price and Switch availability.
-- [Official Vampire Survivors site](https://poncle.games/vampire-survivors) — game official website.
+- [Nintendo eShop listing](https://www.nintendo.com/us/store/products/vampire-survivors-switch/): Switch release date, players, developer, publisher, and description.
+- [Nintendo launch announcement](https://www.nintendo.com/us/whatsnew/indie-hit-vampire-survivors-available-now-on-nintendo-switch/): standard $4.99 price and Switch availability.
+- [Official Vampire Survivors site](https://poncle.games/vampire-survivors): game official website.
 
 Cover image downloaded from Nintendo's official store listing on 2026-07-09.

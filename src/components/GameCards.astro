@@ -1,0 +1,13 @@
+---
+import { plain, platformName } from '../lib/hubs.mjs';
+const { picks } = Astro.props;
+---
+<div class="related">
+  {picks.map((game) => (
+    <article>
+      <h2><a href={`/games/${game.slug}/`}>{game.title}</a></h2>
+      <p>{platformName(game)} | {plain(game.runLength)} | {plain(game.price)}</p>
+      <p>{plain(game.bestFor)}</p>
+    </article>
+  ))}
+</div>

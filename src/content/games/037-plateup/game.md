@@ -15,12 +15,10 @@ players: "1-4 on one Switch or online"
 developer: "It's happening"
 publisher: "Yogscast Games"
 short_description: "PlateUp! is a $19.99 co-op cooking roguelite on Switch for up to four players. If you finished Overcooked and want more, it gives you a new restaurant every run."
-image_file: "cover.webp"
+image_file: "plateup-nintendo-switch-eshop-cover.webp"
 image_source: "https://assets.nintendo.com/image/upload/c_fill,w_1200,h_675/q_auto:best/f_png/store/software/switch/70010000063645/651e137aa38f63f4e973d5881586a88fd9ee67b6410a7257428cba597e8b69ad"
 last_verified: "2026-11-18"
 ---
-
-# PlateUp!
 
 *PlateUp!* is on Nintendo Switch for $19.99 and launched there on February 15, 2024. It is a cooking roguelite for one to four players on one Switch or online, and it is one of our favorite co-op games to play as a couple. If you loved Overcooked, beat every level, and wanted more, this is the game to buy next.
 
